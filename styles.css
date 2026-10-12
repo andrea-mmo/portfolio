@@ -557,27 +557,58 @@ figcaption {
   margin-top: 16px;
 }
 
-.background {
-  margin-top: 32px;
-  border-top: 1px solid var(--line);
+/* Career path: a vertical line with a dot per step, newest first */
+.timeline {
+  margin-top: 40px;
   max-width: 60ch;
 }
 
-.background div {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  gap: 16px;
-  padding: 12px 0;
-  border-bottom: 1px solid var(--line);
+.timeline li {
+  position: relative;
+  padding: 0 0 28px 30px;
+  border-left: 1.5px solid #C4BDAE;
+}
+
+.timeline li:last-child {
+  padding-bottom: 0;
+  border-left-color: transparent;
+}
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -6.5px;
+  top: 3px;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--band);
+  border: 2px solid var(--accent);
+}
+
+.timeline li:first-child::before {
+  background: var(--accent);
+}
+
+.timeline-when {
+  display: block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  line-height: 1.4;
+}
+
+.timeline h3 {
+  margin-top: 6px;
+  font-size: 18px;
+}
+
+.timeline p {
+  margin-top: 2px;
   font-size: 15px;
-}
-
-.background dt {
   color: var(--ink-soft);
-}
-
-.background dd {
-  font-weight: 500;
 }
 
 /* Contact */
