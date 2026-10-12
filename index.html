@@ -48,8 +48,8 @@
     <div class="container">
       <p class="eyebrow">Selected work</p>
       <div class="case-head">
-        <h2>Peluquería Milagros Moreno</h2>
-        <p class="case-sub">A website that turns local searches into bookings for a hair salon in Valencia, Spain.</p>
+        <h2>Peluquería Moreno</h2>
+        <p class="case-sub">A website and an interactive hair quiz that turn local searches into bookings for a hair salon in Valencia, Spain.</p>
       </div>
 
       <dl class="meta">
@@ -66,7 +66,7 @@
             <div class="browser-url">peluqueriamoreno.es</div>
           </div>
           <div class="browser-view" tabindex="0" aria-label="Scrollable preview of the salon website on desktop">
-            <img src="images/moreno-long.jpg" alt="Desktop view of the salon website: hero with WhatsApp and phone buttons, services cards and the owner's story" width="1440" height="2400">
+            <img src="images/moreno-long.jpg" alt="Desktop view of the salon website: hero with WhatsApp, phone and quiz buttons, services cards and the owner's story" width="1440" height="2400">
           </div>
           <figcaption>Desktop. Scroll inside the frame to see more.</figcaption>
         </figure>
@@ -80,6 +80,7 @@
 
       <div class="case-links">
         <a class="btn btn-primary" href="https://peluqueriamoreno.es/" target="_blank" rel="noopener">View live site ↗</a>
+        <a class="btn btn-ghost" href="https://peluqueriamoreno.es/test.html" target="_blank" rel="noopener">Try the quiz ↗</a>
         <a class="btn btn-ghost" href="https://github.com/andrea-mmo/peluqueria-moreno" target="_blank" rel="noopener">View code on GitHub ↗</a>
       </div>
 
@@ -112,11 +113,11 @@
         </li>
         <li>
           <h4>Built to be measured</h4>
-          <p>Every button is tagged by position (header, hero, services, each product, contact), ready for cookieless analytics, so we can see which sections actually drive enquiries and improve from there.</p>
+          <p>Every button is tracked as its own event by position (header, hero, services, each product, contact) with Umami, a cookieless analytics tool, so we can see which sections actually drive enquiries and improve from there.</p>
         </li>
         <li>
-          <h4>Local search basics done properly</h4>
-          <p>Descriptive title and meta description, address, opening hours, an embedded map and semantic HTML, so the site supports her Google Business profile rather than competing with it.</p>
+          <h4>Easy to find, good to share</h4>
+          <p>Its own domain, descriptive titles, address, opening hours, an embedded map and semantic HTML to support her Google Business profile, plus a branded preview card when the link is shared on WhatsApp or social media.</p>
         </li>
         <li>
           <h4>Mobile first, accessible, compliant</h4>
@@ -124,12 +125,60 @@
         </li>
       </ol>
 
+      <div class="quiz-feature">
+        <div class="quiz-intro">
+          <p class="eyebrow">Feature spotlight</p>
+          <h3 class="decisions-title">The hair quiz: a lead magnet that recommends, sells and spreads</h3>
+          <p>After launch I added a one-minute quiz, <span lang="es">“¿Qué necesita tu pelo?”</span> (What does your hair need?). Four simple questions lead to a personal result, turning a casual visitor into an enquiry that already says what they need.</p>
+        </div>
+
+        <ul class="phones" tabindex="0" aria-label="Screens of the hair quiz">
+          <li>
+            <div class="phone-view"><img src="images/quiz-intro.jpg" alt="Quiz start screen with a start button and a button to send the quiz to someone" width="780" height="1688" loading="lazy"></div>
+            <span>1. A low-effort promise</span>
+          </li>
+          <li>
+            <div class="phone-view"><img src="images/quiz-question.jpg" alt="Quiz question one of four, with four large answer buttons and a progress bar" width="780" height="1688" loading="lazy"></div>
+            <span>2. One tap per question</span>
+          </li>
+          <li>
+            <div class="phone-view"><img src="images/quiz-result.jpg" alt="Quiz result card recommending two products, with share and WhatsApp buttons" width="780" height="1688" loading="lazy"></div>
+            <span>3. A result worth sharing</span>
+          </li>
+        </ul>
+
+        <ul class="quiz-points">
+          <li>
+            <h4>Personal recommendations</h4>
+            <p>Each answer scores against five possible outcomes. The result shows the main need, a second one when it applies, the salon's own products for home and the right treatment in the salon.</p>
+          </li>
+          <li>
+            <h4>Two ways to convert</h4>
+            <p>“Book an appointment” opens WhatsApp with a message that already names the treatment. A second button sends the result itself, so Milagros knows what the customer needs before she replies.</p>
+          </li>
+          <li>
+            <h4>Made to be shared</h4>
+            <p>The result becomes a story-sized image, generated in the browser and passed to the phone's share menu. A “send it to a friend” link with a ready-written message brings new visitors in.</p>
+          </li>
+          <li>
+            <h4>Placed where doubt appears</h4>
+            <p>The quiz is offered in the hero, next to “not sure what you need?” in services, and above the products, exactly where a visitor might hesitate.</p>
+          </li>
+          <li>
+            <h4>Measured as a funnel</h4>
+            <p>Starts, each result type, shares, booking clicks and retakes are tracked as events, showing which hair concerns are most common and which entry point works best.</p>
+          </li>
+        </ul>
+      </div>
+
       <div class="tools">
         <span class="tools-label">Built with</span>
         <ul>
           <li>HTML</li>
           <li>CSS</li>
           <li>JavaScript</li>
+          <li>Canvas API</li>
+          <li>Web Share API</li>
           <li>GitHub Pages</li>
           <li>Umami Analytics</li>
           <li>WhatsApp click-to-chat</li>
