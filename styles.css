@@ -257,12 +257,13 @@ img {
   max-width: 52ch;
 }
 
+/* Project facts: a big serif answer with a small note under it */
 .meta {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 20px 24px;
+  gap: 28px 24px;
   margin-top: 36px;
-  padding: 24px 0;
+  padding: 28px 0;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
@@ -272,13 +273,23 @@ img {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--ink-soft);
-  margin-bottom: 4px;
+  color: var(--accent);
+  margin-bottom: 6px;
 }
 
 .meta dd {
-  font-size: 15px;
-  font-weight: 500;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: 28px;
+  line-height: 1.15;
+}
+
+.meta dd span {
+  display: block;
+  margin-top: 6px;
+  font-family: "Inter", system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.45;
+  color: var(--ink-soft);
 }
 
 /* Screenshots */
@@ -653,6 +664,17 @@ figcaption {
 
   .meta {
     grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+  }
+
+  .meta div {
+    padding: 0 24px;
+    border-left: 1px solid var(--line);
+  }
+
+  .meta div:first-child {
+    padding-left: 0;
+    border-left: 0;
   }
 
   .showcase {
