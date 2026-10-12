@@ -420,7 +420,7 @@ figcaption {
 }
 
 /* Quiz spotlight */
-.quiz-feature {
+.quiz-feature, .beyond {
   margin-top: 72px;
   padding-top: 56px;
   border-top: 1px solid var(--line);
@@ -466,6 +466,10 @@ figcaption {
   display: grid;
   gap: 24px 40px;
   margin-top: 24px;
+}
+
+.beyond .quiz-points {
+  margin-top: 32px;
 }
 
 .quiz-points li {
