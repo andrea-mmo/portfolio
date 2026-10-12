@@ -541,6 +541,12 @@ figcaption {
   gap: 24px;
 }
 
+.about-photo {
+  width: min(240px, 60%);
+  margin-top: 28px;
+  border-radius: 16px;
+}
+
 .about-text p {
   font-size: 18px;
   color: var(--ink-soft);
@@ -549,6 +555,29 @@ figcaption {
 
 .about-text p + p {
   margin-top: 16px;
+}
+
+.background {
+  margin-top: 32px;
+  border-top: 1px solid var(--line);
+  max-width: 60ch;
+}
+
+.background div {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 15px;
+}
+
+.background dt {
+  color: var(--ink-soft);
+}
+
+.background dd {
+  font-weight: 500;
 }
 
 /* Contact */
