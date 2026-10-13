@@ -569,22 +569,19 @@ figcaption {
   object-position: top left;
 }
 
-/* Several screenshots in one cover, laid out like a contact sheet */
+/* Several screenshots in one cover: two across, edge to edge, split by thin lines */
 .project-mosaic {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  align-content: center;
-  gap: 10px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
   aspect-ratio: auto;
-  padding: 20px;
-  background: var(--bg);
+  background: var(--line);
 }
 
 .project-mosaic img {
   position: static;
   height: auto;
-  border: 1px solid var(--line);
-  border-radius: 6px;
+  object-position: left center;
 }
 
 .project-body {
@@ -705,6 +702,32 @@ figcaption {
 
 .back-link:hover {
   text-decoration: underline;
+}
+
+/* Section index: a swipeable row on phones, pinned under the header from tablet up */
+.case-toc {
+  display: flex;
+  gap: 8px;
+  margin: 0 -24px;
+  padding: 16px 24px;
+  overflow-x: auto;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.case-toc a {
+  padding: 7px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.case-toc a:hover {
+  border-color: var(--accent);
+  color: var(--accent);
 }
 
 .case-page .decisions li {
@@ -1052,6 +1075,21 @@ figcaption {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .case-toc {
+    position: sticky;
+    top: 70px;
+    z-index: 5;
+    margin: 0;
+    padding: 12px 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+  }
+
+  /* Anchors stop below both the header and the pinned index */
+  .case-page [id] {
+    scroll-margin-top: 72px;
+  }
+
   .project {
     grid-template-columns: 1.15fr 1fr;
   }
@@ -1068,10 +1106,14 @@ figcaption {
     padding: 40px;
   }
 
+  /* Rows share the card's height; the images fill them without stretching it */
   .project-mosaic {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    padding: 28px;
+    grid-template-rows: repeat(3, minmax(0, 1fr));
+  }
+
+  .project-mosaic img {
+    height: 0;
+    min-height: 100%;
   }
 
   .cards {
@@ -1086,11 +1128,6 @@ figcaption {
 }
 
 @media (min-width: 1040px) {
-  .project-mosaic {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 32px;
-  }
-
   .decisions {
     grid-template-columns: repeat(3, 1fr);
   }
