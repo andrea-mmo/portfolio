@@ -525,17 +525,199 @@ figcaption {
   font-weight: 500;
 }
 
-/* Second case study, separated from the one above */
-.case-next {
-  margin-top: 96px;
-  padding-top: 72px;
-  border-top: 1px solid var(--line);
-}
-
-.case-next .beyond {
+/* A follow-up list that continues the story above it, with no divider */
+.beyond-plain {
   margin-top: 56px;
   padding-top: 0;
   border-top: 0;
+}
+
+/* Home: one row per project, linking to its case study page */
+.projects {
+  display: grid;
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.project {
+  position: relative;
+  display: grid;
+  background: var(--surface);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.project:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 48px -32px rgba(23, 25, 28, 0.35);
+}
+
+.project-shot {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+
+.project-shot img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.project-body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 28px 24px 32px;
+}
+
+.project h3 {
+  margin-top: 14px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: clamp(30px, 3.4vw, 40px);
+  line-height: 1.1;
+}
+
+.project h3 a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* The title link covers the whole card */
+.project h3 a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 20px;
+}
+
+.project h3 a:focus-visible {
+  outline: 0;
+}
+
+.project h3 a:focus-visible::after {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.project p {
+  margin-top: 12px;
+  color: var(--ink-soft);
+}
+
+.project .project-role {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.status::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--ink-soft);
+}
+
+.status-live {
+  color: var(--accent);
+}
+
+.status-live::before {
+  border-color: var(--accent);
+  background: var(--accent);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.tags li {
+  padding: 5px 12px;
+  border-radius: 999px;
+  background: var(--accent-soft);
+  color: var(--accent-dark);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.project-more {
+  margin-top: 24px;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.project:hover .project-more {
+  text-decoration: underline;
+}
+
+/* Case study pages */
+.case-page {
+  padding-top: clamp(32px, 5vw, 56px);
+  padding-bottom: clamp(64px, 9vw, 104px);
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: clamp(32px, 5vw, 56px);
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+.case-page .decisions li {
+  border: 1px solid var(--line);
+}
+
+.nav a[aria-current] {
+  color: var(--accent);
+}
+
+.next-project {
+  display: grid;
+  gap: 12px;
+  text-decoration: none;
+}
+
+.next-name {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-size: clamp(32px, 4.6vw, 52px);
+  line-height: 1.1;
+  color: var(--ink);
+}
+
+.next-project:hover .next-name {
+  color: var(--accent);
+}
+
+.next-sub {
+  max-width: 52ch;
+  font-size: clamp(18px, 2vw, 21px);
+  color: var(--ink-soft);
 }
 
 /* Design concepts: one card per proposal, linking to the live page */
@@ -852,6 +1034,22 @@ figcaption {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .project {
+    grid-template-columns: 1.15fr 1fr;
+  }
+
+  .project-shot {
+    aspect-ratio: auto;
+    min-height: 340px;
+    border-bottom: 0;
+    border-right: 1px solid var(--line);
+  }
+
+  .project-body {
+    justify-content: center;
+    padding: 40px;
+  }
+
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -878,7 +1076,7 @@ figcaption {
     scroll-behavior: auto;
   }
 
-  .concepts img {
+  .concepts img, .project {
     transition: none;
   }
 }
