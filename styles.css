@@ -569,6 +569,24 @@ figcaption {
   object-position: top left;
 }
 
+/* Several screenshots in one cover, laid out like a contact sheet */
+.project-mosaic {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-content: center;
+  gap: 10px;
+  aspect-ratio: auto;
+  padding: 20px;
+  background: var(--bg);
+}
+
+.project-mosaic img {
+  position: static;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+
 .project-body {
   display: flex;
   flex-direction: column;
@@ -1050,6 +1068,12 @@ figcaption {
     padding: 40px;
   }
 
+  .project-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding: 28px;
+  }
+
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1062,6 +1086,11 @@ figcaption {
 }
 
 @media (min-width: 1040px) {
+  .project-mosaic {
+    grid-template-columns: repeat(3, 1fr);
+    padding: 32px;
+  }
+
   .decisions {
     grid-template-columns: repeat(3, 1fr);
   }
