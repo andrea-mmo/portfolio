@@ -525,6 +525,68 @@ figcaption {
   font-weight: 500;
 }
 
+/* Second case study, separated from the one above */
+.case-next {
+  margin-top: 96px;
+  padding-top: 72px;
+  border-top: 1px solid var(--line);
+}
+
+.case-next .beyond {
+  margin-top: 56px;
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* Design concepts: one card per proposal, linking to the live page */
+.concepts {
+  display: grid;
+  gap: 32px 24px;
+  margin-top: 40px;
+}
+
+.concepts a {
+  display: block;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.concepts img {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  box-shadow: 0 24px 48px -32px rgba(23, 25, 28, 0.35);
+  transition: transform 0.2s;
+}
+
+.concepts a:hover img {
+  transform: translateY(-4px);
+}
+
+.concept-n {
+  display: block;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.concepts h4 {
+  margin-top: 2px;
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.2;
+}
+
+.concepts p {
+  margin-top: 6px;
+  font-size: 16px;
+  color: var(--ink-soft);
+}
+
 /* What I do */
 .services {
   padding-top: clamp(56px, 9vw, 104px);
@@ -713,6 +775,10 @@ figcaption {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .concepts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -728,10 +794,18 @@ figcaption {
   .decisions {
     grid-template-columns: repeat(3, 1fr);
   }
+
+  .concepts {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .concepts img {
+    transition: none;
   }
 }
