@@ -1146,3 +1146,7 @@ figcaption {
     transition: none;
   }
 }
+
+/* Embrava brand board */
+.brand-board { margin: 32px 0 8px; }
+.brand-board img { width: 100%; height: auto; border-radius: 16px; }
