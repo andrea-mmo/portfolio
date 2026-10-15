@@ -442,6 +442,10 @@ figcaption {
   color: var(--ink-soft);
 }
 
+.quiz-intro + .quiz-intro {
+  margin-top: 48px;
+}
+
 .quiz-intro .decisions-title {
   margin-top: 0;
   margin-bottom: 14px;
