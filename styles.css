@@ -1154,3 +1154,130 @@ figcaption {
 /* Embrava brand board */
 .brand-board { margin: 32px 0 8px; }
 .brand-board img { width: 100%; height: auto; border-radius: 16px; }
+
+/* Peluquería Moreno: Instagram grid and stories */
+.ig-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  max-width: 560px;
+  margin-top: 28px;
+}
+
+.ig-grid img {
+  width: 100%;
+  height: auto;
+}
+
+.ig-stories {
+  display: flex;
+  gap: 14px;
+  margin: 28px -24px 0;
+  padding: 0 24px 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+
+.ig-stories li {
+  flex: 0 0 150px;
+  scroll-snap-align: start;
+  text-align: center;
+}
+
+.ig-stories img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+}
+
+.ig-stories span {
+  display: block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-soft);
+}
+
+/* Peluquería Moreno: first-month data */
+.data-charts {
+  display: grid;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.data-chart {
+  padding: 24px;
+  background: var(--surface);
+  border-radius: 16px;
+}
+
+.data-chart figcaption {
+  margin-bottom: 14px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+.data-chart dl > div {
+  display: grid;
+  grid-template-columns: 9.5em 1fr;
+  align-items: center;
+  gap: 12px;
+  margin-top: 10px;
+  font-size: 15px;
+}
+
+/* Bar widths are a share of the track, the number sits in its own column */
+.data-chart dd {
+  display: grid;
+  grid-template-columns: 1fr 3em;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.data-chart dd span {
+  display: block;
+  height: 14px;
+  border-radius: 3px;
+  background: var(--accent);
+}
+
+.data-chart dd span.hi {
+  background: #E2A955;
+}
+
+/* Later intros inside the same section need room above them */
+.beyond .quiz-intro:not(:first-child) {
+  margin-top: 56px;
+}
+
+@media (min-width: 760px) {
+  /* All stories visible at once instead of a swipeable row */
+  .ig-stories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 640px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+    overflow: visible;
+  }
+
+  .data-charts {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1040px) {
+  .ig-stories {
+    grid-template-columns: repeat(8, 1fr);
+    max-width: none;
+  }
+}
