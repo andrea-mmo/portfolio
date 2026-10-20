@@ -1223,11 +1223,11 @@ figcaption {
 
 .data-chart dl > div {
   display: grid;
-  grid-template-columns: 9.5em 1fr;
+  grid-template-columns: 7.5em 1fr;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 10px;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 /* Bar widths are a share of the track, the number sits in its own column */
@@ -1272,6 +1272,12 @@ figcaption {
 
   .data-charts {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .data-chart dl > div {
+    grid-template-columns: 9.5em 1fr;
+    gap: 12px;
+    font-size: 15px;
   }
 }
 
