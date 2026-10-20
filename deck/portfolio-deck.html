@@ -1,0 +1,1077 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Andrea Martinez Moreno | Marketing Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --sage: #C8D5CB;
+  --green: #1F4D3F;
+  --green-dark: #163A2F;
+  --cream: #EFEAE0;
+  --paper: #F8F4EA;
+  --ink: #17191C;
+  --tape: #E2A955;
+  --blush: #F2D3C2;
+  --mint: #DCE8E2;
+}
+
+@page { size: 1920px 1080px; margin: 0; }
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html, body { background: #888; }
+
+body {
+  font-family: "DM Mono", ui-monospace, monospace;
+  color: var(--ink);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.slide {
+  position: relative;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+  page-break-after: always;
+  break-after: page;
+  background: var(--cream);
+}
+
+.slide:last-child { page-break-after: auto; break-after: auto; }
+
+.bg-sage { background: var(--sage); }
+.bg-green { background: var(--green); color: var(--cream); }
+.bg-cream { background: var(--cream); }
+
+/* ---------- Type ---------- */
+
+.display {
+  font-family: "Instrument Serif", Georgia, serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  line-height: .84;
+  letter-spacing: -.015em;
+}
+
+.mono {
+  font-size: 22px;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: .02em;
+}
+
+.mono b { font-weight: 500; }
+
+.hand {
+  font-family: "Caveat", cursive;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+/* ---------- Side rails ---------- */
+
+.rail {
+  position: absolute;
+  top: 50%;
+  font-size: 17px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+}
+
+.rail-l { left: 38px; transform: translateY(-50%) rotate(180deg); }
+.rail-r { right: 38px; transform: translateY(-50%); }
+
+.page-no {
+  position: absolute;
+  bottom: 40px;
+  right: 110px;
+  font-size: 17px;
+  letter-spacing: .1em;
+}
+
+/* ---------- Collage pieces ---------- */
+
+.photo {
+  position: absolute;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.tape {
+  position: absolute;
+  display: inline-block;
+  padding: 10px 26px;
+  background: var(--tape);
+  color: var(--ink);
+  font-size: 20px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 1.35;
+  white-space: nowrap;
+  z-index: 5;
+}
+
+.tape-mint { background: var(--mint); }
+.tape-blush { background: var(--blush); }
+.tape-green { background: var(--green); color: var(--cream); }
+
+.note {
+  position: absolute;
+  padding: 70px 46px 40px 70px;
+  background:
+    linear-gradient(90deg, transparent 50px, rgba(200, 90, 80, .35) 50px, rgba(200, 90, 80, .35) 52px, transparent 52px),
+    repeating-linear-gradient(180deg, transparent 0 47px, rgba(31, 77, 63, .22) 47px 49px),
+    var(--paper);
+  color: var(--ink);
+  clip-path: polygon(0 3%, 4% 0, 9% 2.5%, 15% .5%, 21% 3%, 27% 0, 34% 2%, 41% .5%, 48% 3%, 55% 0, 62% 2.5%, 69% .5%, 76% 3%, 83% 0, 90% 2.5%, 96% .5%, 100% 2.5%, 100% 100%, 0 100%);
+  z-index: 6;
+}
+
+.note { height: auto !important; padding-bottom: 50px; }
+.note .hand { font-size: 54px; }
+
+.photo, .browser { outline: 1px solid rgba(0, 0, 0, .1); }
+
+.sticky {
+  position: absolute;
+  padding: 34px 38px;
+  background: var(--mint);
+  color: var(--ink);
+  font-size: 22px;
+  line-height: 1.5;
+  z-index: 6;
+}
+
+.phone {
+  position: absolute;
+  border: 12px solid #1b1d20;
+  border-radius: 46px;
+  overflow: hidden;
+  background: #1b1d20;
+}
+
+.phone img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; border-radius: 34px; }
+
+.browser {
+  position: absolute;
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.browser::before {
+  content: "";
+  display: block;
+  height: 34px;
+  background:
+    radial-gradient(circle at 22px 17px, #E0685A 6px, transparent 7px),
+    radial-gradient(circle at 44px 17px, #E8B64B 6px, transparent 7px),
+    radial-gradient(circle at 66px 17px, #6BB06A 6px, transparent 7px),
+    #ECE8E1;
+}
+
+.browser img { width: 100%; height: calc(100% - 34px); object-fit: cover; object-position: top; display: block; }
+
+.browser .url {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 2px 24px;
+  border-radius: 6px;
+  background: #fff;
+  font-size: 13px;
+  color: #555;
+  text-transform: none;
+}
+
+/* ---------- 01 Cover ---------- */
+
+.cover-title {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 260px;
+  color: var(--ink);
+}
+
+.cover-title span { display: block; }
+.cover-title span + span { padding-left: 420px; }
+
+.cover-services {
+  position: absolute;
+  top: 560px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.paren {
+  font-family: "Instrument Serif", serif;
+  font-size: 190px;
+  line-height: 1;
+  font-weight: 400;
+  transform: scaleX(.6);
+}
+
+.cover-services ul { list-style: none; text-align: center; }
+.cover-services li { font-size: 22px; letter-spacing: .06em; line-height: 1.7; text-transform: uppercase; }
+
+.cover-name {
+  position: absolute;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  white-space: nowrap;
+  font-size: 150px;
+  color: var(--green);
+}
+
+/* ---------- 02 Contents ---------- */
+
+.contents {
+  position: absolute;
+  top: 130px;
+  left: 190px;
+  right: 190px;
+  bottom: 130px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+}
+
+.contents-title { font-size: 230px; }
+
+.contents ol { list-style: none; align-self: end; }
+
+.contents li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 18px 0;
+  border-bottom: 2px solid rgba(23, 25, 28, .8);
+}
+
+.contents li span:first-child {
+  font-family: "Instrument Serif", serif;
+  font-size: 58px;
+  line-height: 1;
+}
+
+.contents li span:last-child { font-size: 24px; letter-spacing: .1em; }
+
+/* ---------- 03 About ---------- */
+
+.about-name {
+  position: absolute;
+  top: 80px;
+  left: 150px;
+  font-size: 176px;
+  color: var(--cream);
+}
+
+.about-text {
+  position: absolute;
+  top: 570px;
+  left: 150px;
+  width: 640px;
+  text-align: justify;
+  font-size: 20px;
+}
+
+.about-text p + p { margin-top: 26px; }
+
+.contact-lines {
+  position: absolute;
+  left: 150px;
+  bottom: 80px;
+  font-size: 21px;
+  line-height: 1.8;
+  letter-spacing: .04em;
+}
+
+.contact-lines a { color: inherit; }
+.contact-lines .u { text-decoration: underline; text-underline-offset: 5px; }
+
+/* ---------- 04 Services ---------- */
+
+.services {
+  position: absolute;
+  top: 120px;
+  left: 150px;
+  right: 150px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 56px;
+}
+
+.service h2 {
+  height: 230px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  text-align: center;
+  font-size: 84px;
+  line-height: .86;
+  margin-bottom: 34px;
+}
+
+.service .pic {
+  height: 290px;
+  overflow: hidden;
+  margin-bottom: 34px;
+}
+
+.service .pic img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.service p { text-align: justify; font-size: 19px; line-height: 1.6; }
+
+/* ---------- 05 Background ---------- */
+
+.bg-title {
+  position: absolute;
+  top: 110px;
+  left: 150px;
+  font-size: 150px;
+}
+
+.timeline {
+  position: absolute;
+  top: 430px;
+  left: 150px;
+  width: 960px;
+  list-style: none;
+}
+
+.timeline li {
+  display: grid;
+  grid-template-columns: 230px 1fr;
+  gap: 30px;
+  padding: 26px 0;
+  border-top: 2px solid var(--ink);
+}
+
+.timeline .when { font-size: 20px; letter-spacing: .08em; padding-top: 10px; }
+.timeline h3 { font-family: "Instrument Serif", serif; font-weight: 400; font-size: 54px; line-height: 1; }
+.timeline p { font-size: 19px; margin-top: 10px; text-transform: uppercase; letter-spacing: .04em; }
+
+.skills {
+  position: absolute;
+  top: 130px;
+  right: 150px;
+  width: 560px;
+  height: 820px;
+}
+
+.skills h3 {
+  font-size: 22px;
+  letter-spacing: .14em;
+  font-weight: 500;
+  margin-bottom: 28px;
+}
+
+.skills .chips { display: flex; flex-wrap: wrap; gap: 18px 14px; }
+
+.skills .chips span {
+  position: relative;
+  padding: 10px 20px;
+  background: var(--paper);
+  border: 2px solid var(--ink);
+  font-size: 19px;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ---------- 06 Divider ---------- */
+
+.divider-title {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 300px;
+  z-index: 2;
+}
+
+/* ---------- Case study slides ---------- */
+
+.cs-title {
+  position: absolute;
+  top: 150px;
+  left: 150px;
+  font-size: 170px;
+}
+
+.cs-sub {
+  position: absolute;
+  top: 120px;
+  left: 900px;
+  right: 150px;
+  font-size: 21px;
+}
+
+.cs-meta {
+  font-size: 18px;
+  letter-spacing: .1em;
+  margin-top: 22px;
+  opacity: .75;
+}
+
+.four {
+  position: absolute;
+  left: 150px;
+  width: 820px;
+  top: 470px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 50px;
+}
+
+.four h3 {
+  display: inline-block;
+  margin-bottom: 14px;
+  padding: 6px 18px;
+  background: var(--green);
+  color: var(--cream);
+  font-weight: 400;
+  font-size: 18px;
+  letter-spacing: .14em;
+}
+
+.bg-green .four h3 { background: var(--tape); color: var(--ink); }
+
+.four p { font-size: 18px; line-height: 1.6; text-align: justify; text-transform: uppercase; }
+
+.points {
+  list-style: none;
+  display: grid;
+  gap: 26px;
+}
+
+.points li { padding-left: 34px; position: relative; font-size: 19px; line-height: 1.55; text-transform: uppercase; }
+.points li::before { content: "✦"; position: absolute; left: 0; top: 0; }
+.points b { font-weight: 500; text-decoration: underline; text-underline-offset: 5px; }
+
+.swatches { display: flex; gap: 0; }
+.swatches span { width: 92px; height: 92px; }
+
+.concepts {
+  position: absolute;
+  top: 430px;
+  left: 150px;
+  right: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 40px;
+}
+
+.concept .pic { height: 190px; overflow: hidden; }
+.concept .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; display: block; }
+.concept h3 { margin-top: 16px; font-family: "Instrument Serif", serif; font-weight: 400; font-size: 40px; line-height: 1; }
+.concept p { margin-top: 6px; font-size: 16px; line-height: 1.5; text-transform: uppercase; }
+
+/* ---------- Instagram ---------- */
+
+.ig-profile {
+  position: absolute;
+  top: 60px;
+  right: 150px;
+  width: 560px;
+  padding: 24px 24px 24px;
+  background: #fff;
+  outline: 1px solid rgba(0, 0, 0, .1);
+  font-family: -apple-system, "Helvetica Neue", Arial, sans-serif;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.ig-head { display: flex; align-items: center; gap: 26px; }
+.ig-head img { width: 84px; height: 84px; border-radius: 50%; outline: 1px solid #ddd; }
+.ig-head b { display: block; font-size: 24px; font-weight: 600; }
+.ig-head span { font-size: 17px; color: #555; }
+
+.ig-highlights { display: flex; gap: 22px; margin: 18px 0 18px 4px; }
+.ig-highlights figure { width: 72px; text-align: center; font-size: 13px; }
+.ig-highlights img { width: 72px; height: 72px; border-radius: 50%; object-fit: cover; outline: 2px solid #ddd; outline-offset: 2px; }
+.ig-highlights figcaption { margin-top: 6px; }
+
+.ig-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px; }
+.ig-grid img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; display: block; }
+
+.stories {
+  position: absolute;
+  top: 470px;
+  left: 150px;
+  right: 150px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.stories figure { width: 190px; }
+.stories img { width: 190px; height: 338px; object-fit: cover; display: block; border-radius: 14px; outline: 1px solid rgba(0, 0, 0, .1); }
+.stories figcaption { margin-top: 12px; font-size: 15px; letter-spacing: .06em; text-transform: uppercase; text-align: center; }
+
+.flow {
+  position: absolute;
+  left: 150px;
+  right: 150px;
+  bottom: 70px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  font-size: 30px;
+}
+
+.flow .tape { position: static; }
+
+/* ---------- Data ---------- */
+
+.chart-card {
+  position: absolute;
+  right: 150px;
+  width: 760px;
+  padding: 30px 36px 34px;
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.chart-card h3 { font-weight: 500; font-size: 18px; letter-spacing: .12em; margin-bottom: 22px; }
+
+.bar { display: grid; grid-template-columns: 260px 1fr 70px; align-items: center; gap: 18px; margin-top: 14px; font-size: 18px; text-transform: uppercase; letter-spacing: .04em; }
+.bar i { display: block; height: 26px; background: var(--green); }
+.bar i.hi { background: var(--tape); }
+.bar span:last-child { text-align: right; }
+
+/* ---------- Contact ---------- */
+
+.contact-title {
+  position: absolute;
+  top: 110px;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 260px;
+  color: var(--cream);
+}
+
+.contact-block {
+  position: absolute;
+  top: 640px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  font-size: 30px;
+  letter-spacing: .06em;
+  line-height: 1.8;
+}
+
+.contact-block a { color: inherit; text-decoration: none; }
+.contact-block .big { font-family: "Instrument Serif", serif; font-size: 64px; letter-spacing: 0; text-transform: none; line-height: 1.3; }
+
+/* ---------- Legibility pass: readable on a phone ---------- */
+
+.mono { text-transform: none; letter-spacing: 0; font-size: 26px; line-height: 1.45; }
+.about-text { font-size: 26px; text-align: left; }
+.about-text p + p { margin-top: 20px; }
+.contact-lines { font-size: 24px; line-height: 1.7; }
+.service p { font-size: 25px; line-height: 1.4; text-align: left; }
+.four { gap: 36px 50px; }
+.four h3 { font-size: 20px; }
+.four p { font-size: 24px; line-height: 1.45; text-transform: none; text-align: left; }
+.points li { font-size: 25px; line-height: 1.45; text-transform: none; }
+.timeline .when { font-size: 22px; }
+.timeline p { font-size: 22px; text-transform: none; letter-spacing: 0; }
+.skills .chips span { font-size: 21px; }
+.concept p { font-size: 21px; text-transform: none; }
+.stories figcaption { font-size: 19px; }
+.chart-card h3 { font-size: 19px; }
+.bar { font-size: 22px; text-transform: none; letter-spacing: 0; }
+.contact-block { letter-spacing: .02em; }
+.rail, .page-no { font-size: 18px; }
+
+@media screen {
+  body { display: grid; gap: 40px; padding: 40px; justify-content: center; }
+}
+
+@media print {
+  html, body { background: none; }
+}
+</style>
+</head>
+<body>
+
+<!-- 01 · Cover -->
+<section class="slide bg-sage">
+  <span class="rail rail-l">Let's work together</span>
+  <span class="rail rail-r">Let's work together</span>
+
+  <h1 class="display cover-title"><span>Marketing</span><span>Portfolio</span></h1>
+
+  <div class="photo" style="top:300px;left:200px;width:320px;height:200px;transform:rotate(-2deg)">
+    <img src="../images/embrava-home.jpg" alt="">
+  </div>
+
+  <div class="cover-services">
+    <span class="paren">(</span>
+    <ul>
+      <li>Digital marketing &amp; social media</li>
+      <li>E-commerce</li>
+      <li>Brand &amp; content</li>
+      <li>Web design &amp; analytics</li>
+    </ul>
+    <span class="paren">)</span>
+  </div>
+
+  <div class="photo" style="top:610px;left:200px;width:300px;height:190px;transform:rotate(1.5deg)">
+    <img src="../images/moreno-long.jpg" alt="" style="object-position:top">
+  </div>
+
+  <div class="note" style="top:540px;right:180px;width:400px;transform:rotate(-6deg)">
+    <p class="hand">From the shop floor to the screen</p>
+  </div>
+
+  <div class="photo" style="top:50px;right:120px;width:170px;height:210px;transform:rotate(4deg);z-index:3">
+    <img src="me.jpg" alt="Andrea Martinez Moreno" style="object-position:55% 30%">
+  </div>
+
+  <h2 class="display cover-name">Andrea Martinez Moreno</h2>
+</section>
+
+<!-- 02 · About -->
+<section class="slide bg-green">
+  <span class="rail rail-l">Andrea Martinez Moreno | Digital marketer</span>
+  <span class="rail rail-r">Andrea Martinez Moreno | Digital marketer</span>
+
+  <h2 class="display about-name">Andrea<br>Martinez<br>Moreno</h2>
+
+  <div class="mono about-text">
+    <p>A digital marketer with a background in <b>fashion retail</b> and <b>e&#8209;commerce development</b>.</p>
+    <p>I plan the <b>strategy</b>, write the <b>copy</b>, run the <b>social media</b> and build the <b>website</b>, then <b>measure</b> what works.</p>
+    <p>Manchester, UK · English &amp; Spanish</p>
+  </div>
+
+  <div class="mono contact-lines">
+    <a class="u" href="https://www.linkedin.com/in/andrea-martinez-moreno-150273443/">LinkedIn profile</a><br>
+    <a href="mailto:andreea.mar93@gmail.com">andreea.mar93@gmail.com</a>
+  </div>
+
+  <div class="photo" style="top:60px;left:950px;width:400px;height:500px;transform:rotate(-2deg);z-index:2">
+    <img src="me.jpg" alt="Andrea Martinez Moreno" style="object-position:55% 35%">
+  </div>
+
+  <div class="phone" style="top:180px;left:1390px;width:330px;height:690px;transform:rotate(2deg)">
+    <img src="../images/moreno-mobile.jpg" alt="">
+  </div>
+
+  <div class="photo" style="top:700px;left:1020px;width:330px;height:280px;transform:rotate(-1.5deg)">
+    <img src="ig/05-corte.jpg" alt="" style="object-position:top">
+  </div>
+
+  <div class="sticky" style="top:600px;left:880px;width:400px;font-size:24px;transform:rotate(-7deg)">
+    Customer insight<br>
+    Clear, human copy<br>
+    Hands-on build<br>
+    Measured results
+  </div>
+
+  <div class="note" style="top:600px;right:110px;width:400px;transform:rotate(4deg)">
+    <p class="hand">I understand the customer, and the code behind the store.</p>
+  </div>
+</section>
+
+<!-- 03 · What I do -->
+<section class="slide bg-green">
+  <span class="rail rail-l">Andrea Martinez Moreno | What I do</span>
+  <span class="rail rail-r">Andrea Martinez Moreno | What I do</span>
+
+  <div class="services">
+    <article class="service">
+      <h2 class="display">Digital<br>marketing<br>&amp; social</h2>
+      <div class="pic"><img src="ig/09-no-yellow.jpg" alt="" style="object-position:center top"></div>
+      <p class="mono">Social content and lead magnets that turn followers into enquiries.</p>
+    </article>
+    <article class="service">
+      <h2 class="display" style="font-size:72px">E&#8209;commerce</h2>
+      <div class="pic"><img src="../images/embrava-product.jpg" alt="" style="object-position:left top"></div>
+      <p class="mono">Product pages, kits, pricing and short paths to a sale.</p>
+    </article>
+    <article class="service">
+      <h2 class="display">Brand<br>&amp; content</h2>
+      <div class="pic"><img src="../images/embrava-brand.jpg" alt="" style="object-position:center 8%"></div>
+      <p class="mono">Naming, identity and copy that sounds human, everywhere.</p>
+    </article>
+    <article class="service">
+      <h2 class="display">Web design<br>&amp; analytics</h2>
+      <div class="pic"><img src="../images/moreno-long.jpg" alt="" style="object-position:top"></div>
+      <p class="mono">Fast, hand-built websites with every button tracked.</p>
+    </article>
+  </div>
+</section>
+
+<!-- 04 · Background & skills -->
+<section class="slide bg-cream">
+  <span class="rail rail-l">Andrea Martinez Moreno | Background</span>
+  <span class="rail rail-r">Andrea Martinez Moreno | Background</span>
+
+  <h2 class="display bg-title">Both sides<br>of the counter</h2>
+
+  <ol class="timeline">
+    <li>
+      <span class="when">2026 – now</span>
+      <div><h3>Google Digital Marketing &amp; E&#8209;commerce</h3><p>Professional Certificate, in progress</p></div>
+    </li>
+    <li>
+      <span class="when">2023 – 2026</span>
+      <div><h3>Front-end Developer</h3><p>Fashion e&#8209;commerce platform: marketing site and customer dashboard</p></div>
+    </li>
+    <li>
+      <span class="when">2021 – 2023</span>
+      <div><h3>Store Manager, Pull&amp;Bear (Inditex)</h3><p>Team, sales targets and visual merchandising</p></div>
+    </li>
+  </ol>
+
+  <div class="skills">
+    <h3>MY SKILLS</h3>
+    <div class="chips">
+      <span>Marketing strategy</span>
+      <span>Copywriting</span>
+      <span>Social media</span>
+      <span>Content planning</span>
+      <span>Branding</span>
+      <span>E-commerce</span>
+      <span>Pricing &amp; bundles</span>
+      <span>Local SEO</span>
+      <span>Web analytics</span>
+      <span>UX</span>
+      <span>HTML · CSS · JS</span>
+      <span>Team leadership</span>
+    </div>
+    <div class="tape tape-mint" style="left:0;top:500px;transform:rotate(-4deg)">English &amp; Spanish</div>
+    <div class="note" style="right:0;top:590px;width:400px;transform:rotate(5deg)">
+      <p class="hand">I know what makes people buy, hesitate or walk away.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 05 · Peluquería Moreno · overview -->
+<section class="slide bg-cream">
+  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
+  <span class="page-no">05</span>
+
+  <h2 class="display cs-title">Peluquería<br>Moreno</h2>
+  <div class="tape tape-green" style="top:70px;left:150px;transform:rotate(-3deg)">Real client · Live · 2026</div>
+
+  <div class="four" style="top:460px;width:840px">
+    <div>
+      <h3>CONTEXT</h3>
+      <p>A Valencia salon with 40+ years of history and a 4.7 Google rating, but no website.</p>
+    </div>
+    <div>
+      <h3>STRATEGY</h3>
+      <p>One goal: a WhatsApp message or a call. Copy in the owner's own voice.</p>
+    </div>
+    <div>
+      <h3>EXECUTION</h3>
+      <p>Copy, design and build, local SEO, real reviews and products sold via WhatsApp.</p>
+    </div>
+    <div>
+      <h3>MEASUREMENT</h3>
+      <p>Every button tracked by position, to see what drives enquiries.</p>
+    </div>
+  </div>
+
+  <div class="browser" style="top:120px;left:1060px;width:720px;height:470px;transform:rotate(1deg)">
+    <span class="url">peluqueriamoreno.es</span>
+    <img src="../images/moreno-long.jpg" alt="Peluquería Moreno home page">
+  </div>
+  <div class="phone" style="top:450px;left:1500px;width:270px;height:560px;transform:rotate(-3deg)">
+    <img src="../images/moreno-mobile.jpg" alt="Peluquería Moreno on mobile">
+  </div>
+  <div class="note" style="top:690px;left:1060px;width:400px;transform:rotate(-5deg)">
+    <p class="hand">Trust first, then one clear ask.</p>
+  </div>
+</section>
+
+<!-- 06 · Peluquería Moreno · quiz -->
+<section class="slide bg-sage">
+  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
+  <span class="page-no">06</span>
+
+  <h2 class="display cs-title" style="font-size:150px">The hair<br>quiz</h2>
+  <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Lead magnet</div>
+
+  <div class="mono" style="position:absolute;top:470px;left:150px;width:740px">
+    One minute, four questions, one personal result.
+  </div>
+
+  <ul class="points" style="position:absolute;top:580px;left:150px;width:740px;gap:24px">
+    <li><b>Recommends</b> products for home and the right treatment.</li>
+    <li><b>Sells:</b> “Book” opens WhatsApp with the treatment named.</li>
+    <li><b>Spreads:</b> the result becomes a story to share.</li>
+    <li><b>Measured:</b> starts, results, shares and bookings.</li>
+  </ul>
+
+  <div class="phone" style="top:110px;left:960px;width:290px;height:610px;transform:rotate(-4deg)">
+    <img src="../images/quiz-intro.jpg" alt="Quiz intro screen">
+  </div>
+  <div class="phone" style="top:200px;left:1250px;width:290px;height:610px;transform:rotate(1deg);z-index:2">
+    <img src="../images/quiz-question.jpg" alt="Quiz question screen">
+  </div>
+  <div class="phone" style="top:300px;left:1530px;width:290px;height:610px;transform:rotate(4deg);z-index:3">
+    <img src="../images/quiz-result.jpg" alt="Quiz result screen">
+  </div>
+
+  <div class="tape tape-mint" style="top:820px;left:1000px;transform:rotate(-3deg)">1. Intro</div>
+  <div class="tape tape-mint" style="top:860px;left:1280px;transform:rotate(2deg)">2. One tap each</div>
+  <div class="tape tape-blush" style="top:960px;left:1520px;transform:rotate(-2deg)">3. Share it</div>
+</section>
+
+<!-- 07 · Peluquería Moreno · Instagram grid -->
+<section class="slide bg-cream">
+  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
+  <span class="page-no">07</span>
+
+  <h2 class="display cs-title" style="font-size:150px">Instagram<br>from zero</h2>
+  <div class="tape tape-green" style="top:70px;left:150px;transform:rotate(-3deg)">Social media · Oct 2026</div>
+
+  <div class="mono" style="position:absolute;top:470px;left:150px;width:800px">
+    I set up the account and planned nine launch posts as one grid, in the owner's voice.
+  </div>
+
+  <ul class="points" style="position:absolute;top:620px;left:150px;width:800px;gap:16px">
+    <li><b>Who she is:</b> 40+ years in the same salon.</li>
+    <li><b>Practical:</b> services, address and hours.</li>
+    <li><b>Trust:</b> real Google reviews.</li>
+    <li><b>Lead magnet:</b> the hair quiz.</li>
+    <li><b>Products:</b> one hair need each.</li>
+  </ul>
+
+  <div class="ig-profile">
+    <div class="ig-head">
+      <img src="ig/foto-perfil.jpg" alt="">
+      <div><b>peluqueriamorenovlc</b><span>Peluquería Moreno · Valencia</span></div>
+    </div>
+    <div class="ig-highlights">
+      <figure><img src="ig/destacada-servicios.jpg" alt=""><figcaption>Servicios</figcaption></figure>
+      <figure><img src="ig/destacada-test.jpg" alt=""><figcaption>Test</figcaption></figure>
+      <figure><img src="ig/destacada-productos.jpg" alt=""><figcaption>Productos</figcaption></figure>
+      <figure><img src="ig/destacada-resenas.jpg" alt=""><figcaption>Reseñas</figcaption></figure>
+      <figure><img src="ig/destacada-horario.jpg" alt=""><figcaption>Horario</figcaption></figure>
+    </div>
+    <div class="ig-grid">
+      <img src="ig/09-no-yellow.jpg" alt=""><img src="ig/08-horario.jpg" alt=""><img src="ig/07-keratin.jpg" alt="">
+      <img src="ig/06-resena.jpg" alt=""><img src="ig/05-corte.jpg" alt=""><img src="ig/04-test.jpg" alt="">
+      <img src="ig/03-donde-estoy.jpg" alt=""><img src="ig/02-servicios.jpg" alt=""><img src="ig/01-hola.jpg" alt="">
+    </div>
+  </div>
+
+  <div class="note" style="top:150px;left:830px;width:320px;padding:56px 30px 30px 64px;transform:rotate(-5deg)">
+    <p class="hand" style="font-size:46px">Her voice, not a brand's.</p>
+  </div>
+</section>
+
+<!-- 08 · Peluquería Moreno · Stories -->
+<section class="slide bg-sage">
+  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
+  <span class="page-no">08</span>
+
+  <h2 class="display cs-title" style="font-size:150px">Stories<br>that sell</h2>
+  <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Product series</div>
+
+  <div class="mono cs-sub" style="left:900px;top:150px">
+    Six stories, one per hair problem: the question, the product, and a link to the products already filtered for it.
+  </div>
+
+  <div class="stories">
+    <figure><img src="ig/producto-1-rizos.jpg" alt=""><figcaption>Curls</figcaption></figure>
+    <figure><img src="ig/producto-2-encrespado.jpg" alt=""><figcaption>Frizz</figcaption></figure>
+    <figure><img src="ig/producto-3-rubias.jpg" alt=""><figcaption>Blondes</figcaption></figure>
+    <figure><img src="ig/producto-4-canas.jpg" alt=""><figcaption>Grey hair</figcaption></figure>
+    <figure><img src="ig/producto-5-brillo.jpg" alt=""><figcaption>Shine</figcaption></figure>
+    <figure><img src="ig/producto-6-debil.jpg" alt=""><figcaption>Weak hair</figcaption></figure>
+    <figure><img src="ig/historia-resenas.jpg" alt=""><figcaption>Reviews</figcaption></figure>
+    <figure><img src="ig/historia-test.jpg" alt=""><figcaption>Quiz</figcaption></figure>
+  </div>
+
+  <div class="flow">
+    <span class="tape tape-blush">A hair problem</span>→
+    <span class="tape tape-blush">The product</span>→
+    <span class="tape tape-mint" style="text-transform:none">/productos?filtro=rizos</span>→
+    <span class="tape tape-green">WhatsApp enquiry</span>
+  </div>
+</section>
+
+<!-- 09 · Peluquería Moreno · Data -->
+<section class="slide bg-green">
+  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
+  <span class="page-no">09</span>
+
+  <h2 class="display cs-title" style="color:var(--cream);font-size:150px">What the<br>data says</h2>
+  <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Umami · First month</div>
+
+  <ul class="points" style="position:absolute;top:470px;left:150px;width:840px;gap:28px">
+    <li><b>Instagram brings 44%</b> of visits from other sites. → The link in bio goes to the quiz.</li>
+    <li><b>The quiz is the most used feature.</b> → It's in posts, stories and highlights.</li>
+    <li><b>“Blonde, no yellow” is the top result.</b> → Blonde care leads a post and a story.</li>
+    <li><b>Few WhatsApp clicks so far.</b> → Next: a more visible booking button.</li>
+  </ul>
+
+  <div class="chart-card" style="top:110px">
+    <h3>WHERE VISITS FROM OTHER SITES COME FROM</h3>
+    <div class="bar"><span>Instagram</span><i class="hi" style="width:100%"></i><span>44%</span></div>
+    <div class="bar"><span>Google</span><i style="width:39%"></i><span>17%</span></div>
+    <div class="bar"><span>Facebook</span><i style="width:39%"></i><span>17%</span></div>
+    <div class="bar"><span>Other</span><i style="width:50%"></i><span>22%</span></div>
+  </div>
+
+  <div class="chart-card" style="top:530px">
+    <h3>MOST COMMON QUIZ RESULTS</h3>
+    <div class="bar" style="grid-template-columns:330px 1fr"><span>Blonde, no yellow</span><i class="hi" style="width:100%"></i></div>
+    <div class="bar" style="grid-template-columns:330px 1fr"><span>Repair</span><i style="width:92%"></i></div>
+    <div class="bar" style="grid-template-columns:330px 1fr"><span>Shine &amp; hydration</span><i style="width:52%"></i></div>
+    <div class="bar" style="grid-template-columns:330px 1fr"><span>Protect the colour</span><i style="width:44%"></i></div>
+    <div class="bar" style="grid-template-columns:330px 1fr"><span>Healthy hair</span><i style="width:40%"></i></div>
+  </div>
+
+  <p class="mono" style="position:absolute;bottom:46px;right:150px;width:760px;font-size:19px;opacity:.8">Source: Umami, last 30 days. Early data, includes my own testing.</p>
+</section>
+
+<!-- 10 · Embrava · brand -->
+<section class="slide bg-cream">
+  <span class="rail rail-l">Andrea Martinez Moreno | Embrava</span>
+  <span class="page-no">10</span>
+
+  <h2 class="display cs-title">Embrava</h2>
+  <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Brand &amp; e-commerce · Concept</div>
+
+  <div class="mono" style="position:absolute;top:330px;left:150px;width:780px">
+    My own training gear brand, from identity to online store. A concept for now, one I'd like to launch one day.
+  </div>
+
+  <div class="four" style="top:490px;width:780px">
+    <div>
+      <h3>THE NAME</h3>
+      <p>From Spanish “brava” (bold) and a wild, rough sea.</p>
+    </div>
+    <div>
+      <h3>THE SYMBOL</h3>
+      <p>A sun setting over the sea, always in one terracotta ink.</p>
+    </div>
+    <div>
+      <h3>THE PALETTE</h3>
+      <p>Espresso, sand and cream, unlike most fitness brands.</p>
+      <div class="swatches" style="margin-top:14px">
+        <span style="background:#3A2A22;width:64px;height:64px"></span><span style="background:#D9C4A2;width:64px;height:64px"></span><span style="background:#F4EEE3;width:64px;height:64px;outline:1px solid rgba(0,0,0,.15)"></span><span style="background:#C46848;width:64px;height:64px"></span>
+      </div>
+    </div>
+    <div>
+      <h3>THE TAGLINE</h3>
+      <p>Strength. Character. Movement.</p>
+    </div>
+  </div>
+
+  <div class="photo" style="top:110px;right:150px;width:820px;height:673px;transform:rotate(1.5deg)">
+    <img src="../images/embrava-brand.jpg" alt="Embrava logo before and after, palette and products">
+  </div>
+  <div class="note" style="top:780px;right:560px;width:360px;transform:rotate(-5deg)">
+    <p class="hand">Brave, like the sea.</p>
+  </div>
+</section>
+
+<!-- 11 · Embrava · store -->
+<section class="slide bg-sage">
+  <span class="rail rail-l">Andrea Martinez Moreno | Embrava</span>
+  <span class="page-no">11</span>
+
+  <h2 class="display cs-title" style="font-size:150px">A store that<br>sells the set</h2>
+
+  <ul class="points" style="position:absolute;top:470px;left:150px;width:760px;gap:24px">
+    <li><b>Colour first:</b> swatches swap the photo instantly.</li>
+    <li><b>Kits:</b> “Where do you train?” leads to three kits that save 20%.</li>
+    <li><b>Build your own:</b> any three pieces unlock 15% off.</li>
+    <li><b>Free delivery from £40,</b> just above a typical order.</li>
+    <li><b>Mobile first,</b> because brands like this are found on social media.</li>
+  </ul>
+
+  <div class="browser" style="top:110px;left:980px;width:800px;height:520px;transform:rotate(-1deg)">
+    <span class="url">andrea-mmo.github.io/embrava</span>
+    <img src="../images/embrava-home.jpg" alt="Embrava home page">
+  </div>
+  <div class="browser" style="top:540px;left:1060px;width:720px;height:470px;transform:rotate(1.5deg)">
+    <span class="url">product.html?p=gym-bag</span>
+    <img src="../images/embrava-product.jpg" alt="Embrava product page">
+  </div>
+  <div class="tape" style="top:520px;left:960px;transform:rotate(-6deg)">Built to raise order value</div>
+</section>
+
+<!-- 12 · Ben Fet -->
+<section class="slide bg-cream">
+  <span class="rail rail-l">Andrea Martinez Moreno | Multiservicios Ben Fet</span>
+  <span class="page-no">12</span>
+
+  <h2 class="display cs-title" style="font-size:124px">Multiservicios<br>Ben Fet</h2>
+  <div class="tape tape-blush" style="top:70px;left:150px;transform:rotate(-3deg)">Real client · In progress</div>
+  <div class="mono cs-sub" style="left:1100px;top:120px;width:670px">
+    Six directions for a cleaning company's website. Each one is a different positioning, so the owner can choose without jargon.
+  </div>
+
+  <div class="concepts" style="top:420px">
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-01-fresco.jpg" alt=""></div><h3>01 Fresh</h3><p>For households.</p></div>
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-02-corporativo.jpg" alt=""></div><h3>02 Corporate</h3><p>For company contracts.</p></div>
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-03-calido.jpg" alt=""></div><h3>03 Warm</h3><p>Personal care, the same face.</p></div>
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-04-minimal.jpg" alt=""></div><h3>04 Minimalist</h3><p>Simple, for any customer.</p></div>
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-05-vibrante.jpg" alt=""></div><h3>05 Vibrant</h3><p>Young, urban, book online.</p></div>
+    <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-06-local.jpg" alt=""></div><h3>06 Local</h3><p>Word of mouth and WhatsApp.</p></div>
+  </div>
+
+  <div class="note" style="top:270px;left:880px;width:260px;padding:50px 24px 24px 60px;transform:rotate(-4deg)">
+    <p class="hand" style="font-size:40px">Show, don't ask.</p>
+  </div>
+</section>
+
+<!-- 13 · Contact -->
+<section class="slide bg-green">
+  <span class="rail rail-l">Let's work together</span>
+  <span class="rail rail-r">Let's work together</span>
+
+  <h2 class="display contact-title">Let's work<br>together</h2>
+
+  <div class="mono contact-block">
+    <div class="big">Andrea Martinez Moreno</div>
+    <a href="mailto:andreea.mar93@gmail.com">andreea.mar93@gmail.com</a><br>
+    <a href="https://andrea-mmo.github.io/portfolio/">andrea-mmo.github.io/portfolio</a><br>
+    <a href="https://www.linkedin.com/in/andrea-martinez-moreno-150273443/">LinkedIn ↗</a> · Manchester, UK
+  </div>
+
+  <div class="tape" style="top:110px;left:260px;transform:rotate(-6deg)">Marketing &amp; e-commerce roles</div>
+  <div class="tape tape-mint" style="top:540px;right:240px;transform:rotate(5deg)">Freelance projects</div>
+
+  <div class="note" style="bottom:60px;left:180px;width:360px;transform:rotate(-5deg)">
+    <p class="hand">Thanks for reading!</p>
+  </div>
+</section>
+
+</body>
+</html>
