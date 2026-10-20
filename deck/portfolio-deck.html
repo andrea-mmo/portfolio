@@ -611,6 +611,96 @@ body {
 .contact-block { letter-spacing: .02em; }
 .rail, .page-no { font-size: 18px; }
 
+/* ---------- Retail identity: receipts, price tags, order bar ---------- */
+
+.display { text-transform: none; letter-spacing: -.02em; line-height: .9; }
+.display em { font-style: italic; color: var(--green); }
+.bg-green .display em { color: var(--tape); }
+
+.topbar {
+  position: absolute;
+  top: 0;
+  left: 150px;
+  right: 150px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 2px dashed currentColor;
+  font-size: 16px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  opacity: .8;
+  z-index: 1;
+}
+
+.topbar .order { display: flex; align-items: center; gap: 14px; }
+
+.barcode {
+  display: inline-block;
+  width: 90px;
+  height: 22px;
+  background: repeating-linear-gradient(90deg, currentColor 0 2px, transparent 2px 4px, currentColor 4px 7px, transparent 7px 9px, currentColor 9px 10px, transparent 10px 13px, currentColor 13px 16px, transparent 16px 17px);
+}
+
+.receipt {
+  position: absolute;
+  z-index: 6;
+  padding: 34px 32px 30px;
+  background: #FBFAF6;
+  color: var(--ink);
+  font-family: "DM Mono", monospace;
+  text-transform: uppercase;
+  letter-spacing: .03em;
+  outline: 1px solid rgba(0, 0, 0, .06);
+  clip-path: polygon(0.00% 0, 2.27% 10px, 4.55% 0, 6.82% 10px, 9.09% 0, 11.36% 10px, 13.64% 0, 15.91% 10px, 18.18% 0, 20.45% 10px, 22.73% 0, 25.00% 10px, 27.27% 0, 29.55% 10px, 31.82% 0, 34.09% 10px, 36.36% 0, 38.64% 10px, 40.91% 0, 43.18% 10px, 45.45% 0, 47.73% 10px, 50.00% 0, 52.27% 10px, 54.55% 0, 56.82% 10px, 59.09% 0, 61.36% 10px, 63.64% 0, 65.91% 10px, 68.18% 0, 70.45% 10px, 72.73% 0, 75.00% 10px, 77.27% 0, 79.55% 10px, 81.82% 0, 84.09% 10px, 86.36% 0, 88.64% 10px, 90.91% 0, 93.18% 10px, 95.45% 0, 97.73% 10px, 100% 0, 100.00% 100%, 97.73% calc(100% - 10px), 95.45% 100%, 93.18% calc(100% - 10px), 90.91% 100%, 88.64% calc(100% - 10px), 86.36% 100%, 84.09% calc(100% - 10px), 81.82% 100%, 79.55% calc(100% - 10px), 77.27% 100%, 75.00% calc(100% - 10px), 72.73% 100%, 70.45% calc(100% - 10px), 68.18% 100%, 65.91% calc(100% - 10px), 63.64% 100%, 61.36% calc(100% - 10px), 59.09% 100%, 56.82% calc(100% - 10px), 54.55% 100%, 52.27% calc(100% - 10px), 50.00% 100%, 47.73% calc(100% - 10px), 45.45% 100%, 43.18% calc(100% - 10px), 40.91% 100%, 38.64% calc(100% - 10px), 36.36% 100%, 34.09% calc(100% - 10px), 31.82% 100%, 29.55% calc(100% - 10px), 27.27% 100%, 25.00% calc(100% - 10px), 22.73% 100%, 20.45% calc(100% - 10px), 18.18% 100%, 15.91% calc(100% - 10px), 13.64% 100%, 11.36% calc(100% - 10px), 9.09% 100%, 6.82% calc(100% - 10px), 4.55% 100%, 2.27% calc(100% - 10px), 0 100%);
+}
+
+.receipt .r-head, .receipt .r-foot {
+  font-size: 15px;
+  letter-spacing: .14em;
+  text-align: center;
+  opacity: .7;
+}
+
+.receipt .r-head { padding-bottom: 14px; border-bottom: 2px dashed rgba(23, 25, 28, .5); }
+.receipt .r-text { padding: 18px 0; font-size: 26px; line-height: 1.35; }
+.receipt .r-foot { padding-top: 14px; border-top: 2px dashed rgba(23, 25, 28, .5); }
+.receipt .barcode { display: block; width: 100%; height: 40px; margin-top: 14px; color: var(--ink); }
+
+.receipt .r-items { list-style: none; padding: 14px 0; font-size: 21px; line-height: 1.7; }
+.receipt .r-items li { display: flex; justify-content: space-between; gap: 16px; }
+.receipt .r-total { display: flex; justify-content: space-between; padding: 12px 0 2px; border-top: 2px dashed rgba(23, 25, 28, .5); font-size: 21px; font-weight: 500; }
+
+/* Price tags replace the tape labels */
+.tape {
+  padding: 10px 24px 10px 46px;
+  clip-path: polygon(20px 0, 100% 0, 100% 100%, 20px 100%, 0 50%);
+  background-image: radial-gradient(circle at 24px 50%, rgba(23, 25, 28, .55) 0 5px, transparent 6px);
+}
+
+.flow .tape { padding-left: 46px; }
+
+.photo.polaroid { padding: 14px 14px 52px; background: #FBFAF6; }
+.photo.polaroid img { height: 100%; }
+
+.cover-headline {
+  position: absolute;
+  top: 210px;
+  left: 150px;
+  font-size: 196px;
+  line-height: .9;
+  color: var(--ink);
+}
+
+.cover-who { position: absolute; left: 150px; top: 790px; }
+.cover-who .name { font-family: "Instrument Serif", serif; font-size: 72px; line-height: 1; }
+.cover-who .role { margin-top: 16px; font-size: 22px; letter-spacing: .1em; text-transform: uppercase; }
+
+.contact-title2 { position: absolute; top: 170px; left: 150px; font-size: 260px; color: var(--cream); }
+.contact-lines2 { position: absolute; left: 150px; top: 560px; font-size: 28px; line-height: 1.8; }
+.contact-lines2 a { color: inherit; text-decoration: none; }
+
 @media screen {
   body { display: grid; gap: 40px; padding: 40px; justify-content: center; }
 }
@@ -623,46 +713,40 @@ body {
 <body>
 
 <!-- 01 · Cover -->
-<section class="slide bg-sage">
-  <span class="rail rail-l">Let's work together</span>
-  <span class="rail rail-r">Let's work together</span>
+<section class="slide bg-cream">
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Marketing portfolio</span><span class="order">Nº 01 / 13 <i class="barcode"></i></span></div>
 
-  <h1 class="display cover-title"><span>Marketing</span><span>Portfolio</span></h1>
+  <div class="tape tape-green" style="top:120px;left:150px;transform:rotate(-2deg)">Marketing portfolio · 2026</div>
 
-  <div class="photo" style="top:300px;left:200px;width:320px;height:200px;transform:rotate(-2deg)">
-    <img src="../images/embrava-home.jpg" alt="">
+  <h1 class="display cover-headline">From the<br>shop floor<br>to the <em>screen.</em></h1>
+
+  <div class="cover-who">
+    <p class="name">Andrea Martinez Moreno</p>
+    <p class="role">Digital marketing · E&#8209;commerce · Manchester</p>
   </div>
 
-  <div class="cover-services">
-    <span class="paren">(</span>
-    <ul>
-      <li>Digital marketing &amp; social media</li>
-      <li>E-commerce</li>
-      <li>Brand &amp; content</li>
-      <li>Web design &amp; analytics</li>
+  <div class="receipt" style="top:110px;right:150px;width:470px;transform:rotate(2.5deg)">
+    <p class="r-head">What I do · Nº 01</p>
+    <ul class="r-items">
+      <li><span>Marketing &amp; social</span><span>01</span></li>
+      <li><span>E-commerce</span><span>02</span></li>
+      <li><span>Brand &amp; content</span><span>03</span></li>
+      <li><span>Web &amp; analytics</span><span>04</span></li>
     </ul>
-    <span class="paren">)</span>
+    <p class="r-total"><span>Total</span><span>1 marketer</span></p>
+    <i class="barcode"></i>
   </div>
 
-  <div class="photo" style="top:610px;left:200px;width:300px;height:190px;transform:rotate(1.5deg)">
-    <img src="../images/moreno-long.jpg" alt="" style="object-position:top">
-  </div>
-
-  <div class="note" style="top:540px;right:180px;width:400px;transform:rotate(-6deg)">
-    <p class="hand">From the shop floor to the screen</p>
-  </div>
-
-  <div class="photo" style="top:50px;right:120px;width:170px;height:210px;transform:rotate(4deg);z-index:3">
+  <div class="photo polaroid" style="top:610px;right:200px;width:330px;height:400px;transform:rotate(-4deg)">
     <img src="me.jpg" alt="Andrea Martinez Moreno" style="object-position:55% 30%">
   </div>
 
-  <h2 class="display cover-name">Andrea Martinez Moreno</h2>
+  <div class="tape tape-blush" style="top:640px;right:480px;transform:rotate(-8deg);z-index:7">Hi, I'm Andrea</div>
 </section>
 
 <!-- 02 · About -->
 <section class="slide bg-green">
-  <span class="rail rail-l">Andrea Martinez Moreno | Digital marketer</span>
-  <span class="rail rail-r">Andrea Martinez Moreno | Digital marketer</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Digital marketer</span><span class="order">Nº 02 / 13 <i class="barcode"></i></span></div>
 
   <h2 class="display about-name">Andrea<br>Martinez<br>Moreno</h2>
 
@@ -685,26 +769,30 @@ body {
     <img src="../images/moreno-mobile.jpg" alt="">
   </div>
 
-  <div class="photo" style="top:700px;left:1020px;width:330px;height:280px;transform:rotate(-1.5deg)">
-    <img src="ig/05-corte.jpg" alt="" style="object-position:top">
+  
+
+  <div class="receipt" style="top:590px;left:860px;width:420px;transform:rotate(-6deg)">
+    <p class="r-head">Strengths</p>
+    <ul class="r-items">
+      <li><span>Customer insight</span><span>1</span></li>
+      <li><span>Human copy</span><span>1</span></li>
+      <li><span>Hands-on build</span><span>1</span></li>
+      <li><span>Measured results</span><span>1</span></li>
+    </ul>
+    <i class="barcode"></i>
   </div>
 
-  <div class="sticky" style="top:600px;left:880px;width:400px;font-size:24px;transform:rotate(-7deg)">
-    Customer insight<br>
-    Clear, human copy<br>
-    Hands-on build<br>
-    Measured results
-  </div>
-
-  <div class="note" style="top:600px;right:110px;width:400px;transform:rotate(4deg)">
-    <p class="hand">I understand the customer, and the code behind the store.</p>
+  <div class="receipt" style="top:600px;right:110px;width:400px;transform:rotate(4deg)">
+    <p class="r-head">Note · Nº 02</p>
+    <p class="r-text">I understand the customer, and the code behind the store.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
 <!-- 03 · What I do -->
 <section class="slide bg-green">
-  <span class="rail rail-l">Andrea Martinez Moreno | What I do</span>
-  <span class="rail rail-r">Andrea Martinez Moreno | What I do</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>What I do</span><span class="order">Nº 03 / 13 <i class="barcode"></i></span></div>
 
   <div class="services">
     <article class="service">
@@ -732,10 +820,9 @@ body {
 
 <!-- 04 · Background & skills -->
 <section class="slide bg-cream">
-  <span class="rail rail-l">Andrea Martinez Moreno | Background</span>
-  <span class="rail rail-r">Andrea Martinez Moreno | Background</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Background</span><span class="order">Nº 04 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display bg-title">Both sides<br>of the counter</h2>
+  <h2 class="display bg-title">Both sides<br>of the <em>counter</em></h2>
 
   <ol class="timeline">
     <li>
@@ -769,18 +856,20 @@ body {
       <span>Team leadership</span>
     </div>
     <div class="tape tape-mint" style="left:0;top:500px;transform:rotate(-4deg)">English &amp; Spanish</div>
-    <div class="note" style="right:0;top:590px;width:400px;transform:rotate(5deg)">
-      <p class="hand">I know what makes people buy, hesitate or walk away.</p>
-    </div>
+    <div class="receipt" style="right:0;top:590px;width:400px;transform:rotate(5deg)">
+    <p class="r-head">Note · Nº 04</p>
+    <p class="r-text">I know what makes people buy, hesitate or walk away.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
+  </div>
   </div>
 </section>
 
 <!-- 05 · Peluquería Moreno · overview -->
 <section class="slide bg-cream">
-  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
-  <span class="page-no">05</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 05 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title">Peluquería<br>Moreno</h2>
+  <h2 class="display cs-title">Peluquería<br><em>Moreno</em></h2>
   <div class="tape tape-green" style="top:70px;left:150px;transform:rotate(-3deg)">Real client · Live · 2026</div>
 
   <div class="four" style="top:460px;width:840px">
@@ -809,17 +898,19 @@ body {
   <div class="phone" style="top:450px;left:1500px;width:270px;height:560px;transform:rotate(-3deg)">
     <img src="../images/moreno-mobile.jpg" alt="Peluquería Moreno on mobile">
   </div>
-  <div class="note" style="top:690px;left:1060px;width:400px;transform:rotate(-5deg)">
-    <p class="hand">Trust first, then one clear ask.</p>
+  <div class="receipt" style="top:690px;left:1060px;width:400px;transform:rotate(-5deg)">
+    <p class="r-head">Note · Nº 05</p>
+    <p class="r-text">Trust first, then one clear ask.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
 <!-- 06 · Peluquería Moreno · quiz -->
 <section class="slide bg-sage">
-  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
-  <span class="page-no">06</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 06 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:150px">The hair<br>quiz</h2>
+  <h2 class="display cs-title" style="font-size:150px">The hair<br><em>quiz</em></h2>
   <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Lead magnet</div>
 
   <div class="mono" style="position:absolute;top:470px;left:150px;width:740px">
@@ -850,10 +941,9 @@ body {
 
 <!-- 07 · Peluquería Moreno · Instagram grid -->
 <section class="slide bg-cream">
-  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
-  <span class="page-no">07</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 07 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:150px">Instagram<br>from zero</h2>
+  <h2 class="display cs-title" style="font-size:150px">Instagram<br><em>from zero</em></h2>
   <div class="tape tape-green" style="top:70px;left:150px;transform:rotate(-3deg)">Social media · Oct 2026</div>
 
   <div class="mono" style="position:absolute;top:470px;left:150px;width:800px">
@@ -887,17 +977,19 @@ body {
     </div>
   </div>
 
-  <div class="note" style="top:150px;left:830px;width:320px;padding:56px 30px 30px 64px;transform:rotate(-5deg)">
-    <p class="hand" style="font-size:46px">Her voice, not a brand's.</p>
+  <div class="receipt" style="top:150px;left:830px;width:320px;transform:rotate(-5deg)">
+    <p class="r-head">Note · Nº 07</p>
+    <p class="r-text">Her voice, not a brand's.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
 <!-- 08 · Peluquería Moreno · Stories -->
 <section class="slide bg-sage">
-  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
-  <span class="page-no">08</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 08 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:150px">Stories<br>that sell</h2>
+  <h2 class="display cs-title" style="font-size:150px">Stories<br><em>that sell</em></h2>
   <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Product series</div>
 
   <div class="mono cs-sub" style="left:900px;top:150px">
@@ -925,10 +1017,9 @@ body {
 
 <!-- 09 · Peluquería Moreno · Data -->
 <section class="slide bg-green">
-  <span class="rail rail-l">Andrea Martinez Moreno | Peluquería Moreno</span>
-  <span class="page-no">09</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 09 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="color:var(--cream);font-size:150px">What the<br>data says</h2>
+  <h2 class="display cs-title" style="color:var(--cream);font-size:150px">What the<br><em>data</em> says</h2>
   <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Umami · First month</div>
 
   <ul class="points" style="position:absolute;top:470px;left:150px;width:840px;gap:28px">
@@ -960,10 +1051,9 @@ body {
 
 <!-- 10 · Embrava · brand -->
 <section class="slide bg-cream">
-  <span class="rail rail-l">Andrea Martinez Moreno | Embrava</span>
-  <span class="page-no">10</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Embrava</span><span class="order">Nº 10 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title">Embrava</h2>
+  <h2 class="display cs-title"><em>Embrava</em></h2>
   <div class="tape" style="top:70px;left:150px;transform:rotate(-3deg)">Brand &amp; e-commerce · Concept</div>
 
   <div class="mono" style="position:absolute;top:330px;left:150px;width:780px">
@@ -995,17 +1085,19 @@ body {
   <div class="photo" style="top:110px;right:150px;width:820px;height:673px;transform:rotate(1.5deg)">
     <img src="../images/embrava-brand.jpg" alt="Embrava logo before and after, palette and products">
   </div>
-  <div class="note" style="top:780px;right:560px;width:360px;transform:rotate(-5deg)">
-    <p class="hand">Brave, like the sea.</p>
+  <div class="receipt" style="top:780px;right:560px;width:360px;transform:rotate(-5deg)">
+    <p class="r-head">Note · Nº 10</p>
+    <p class="r-text">Brave, like the sea.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
 <!-- 11 · Embrava · store -->
 <section class="slide bg-sage">
-  <span class="rail rail-l">Andrea Martinez Moreno | Embrava</span>
-  <span class="page-no">11</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Embrava</span><span class="order">Nº 11 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:150px">A store that<br>sells the set</h2>
+  <h2 class="display cs-title" style="font-size:150px">A store that<br><em>sells the set</em></h2>
 
   <ul class="points" style="position:absolute;top:470px;left:150px;width:760px;gap:24px">
     <li><b>Colour first:</b> swatches swap the photo instantly.</li>
@@ -1028,10 +1120,9 @@ body {
 
 <!-- 12 · Ben Fet -->
 <section class="slide bg-cream">
-  <span class="rail rail-l">Andrea Martinez Moreno | Multiservicios Ben Fet</span>
-  <span class="page-no">12</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Multiservicios Ben Fet</span><span class="order">Nº 12 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:124px">Multiservicios<br>Ben Fet</h2>
+  <h2 class="display cs-title" style="font-size:124px">Multiservicios<br><em>Ben Fet</em></h2>
   <div class="tape tape-blush" style="top:70px;left:150px;transform:rotate(-3deg)">Real client · In progress</div>
   <div class="mono cs-sub" style="left:1100px;top:120px;width:670px">
     Six directions for a cleaning company's website. Each one is a different positioning, so the owner can choose without jargon.
@@ -1046,30 +1137,40 @@ body {
     <div class="concept"><div class="pic" style="height:170px"><img src="../images/benfet-06-local.jpg" alt=""></div><h3>06 Local</h3><p>Word of mouth and WhatsApp.</p></div>
   </div>
 
-  <div class="note" style="top:270px;left:880px;width:260px;padding:50px 24px 24px 60px;transform:rotate(-4deg)">
-    <p class="hand" style="font-size:40px">Show, don't ask.</p>
+  <div class="receipt" style="top:120px;left:780px;width:270px;transform:rotate(-4deg)">
+    <p class="r-head">Note · Nº 12</p>
+    <p class="r-text">Show, don't ask.</p>
+    <p class="r-foot">Thank you</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
 <!-- 13 · Contact -->
 <section class="slide bg-green">
-  <span class="rail rail-l">Let's work together</span>
-  <span class="rail rail-r">Let's work together</span>
+  <div class="topbar"><span>Andrea Martinez Moreno</span><span>Marketing portfolio</span><span class="order">Nº 13 / 13 <i class="barcode"></i></span></div>
 
-  <h2 class="display contact-title">Let's work<br>together</h2>
+  <h2 class="display contact-title2">Let's <em>talk.</em></h2>
 
-  <div class="mono contact-block">
-    <div class="big">Andrea Martinez Moreno</div>
+  <div class="mono contact-lines2">
     <a href="mailto:andreea.mar93@gmail.com">andreea.mar93@gmail.com</a><br>
     <a href="https://andrea-mmo.github.io/portfolio/">andrea-mmo.github.io/portfolio</a><br>
     <a href="https://www.linkedin.com/in/andrea-martinez-moreno-150273443/">LinkedIn ↗</a> · Manchester, UK
   </div>
 
-  <div class="tape" style="top:110px;left:260px;transform:rotate(-6deg)">Marketing &amp; e-commerce roles</div>
-  <div class="tape tape-mint" style="top:540px;right:240px;transform:rotate(5deg)">Freelance projects</div>
+  <div class="tape" style="top:770px;left:150px;transform:rotate(-3deg)">Marketing &amp; e-commerce roles</div>
+  <div class="tape tape-mint" style="top:790px;left:640px;transform:rotate(2deg)">Freelance projects</div>
 
-  <div class="note" style="bottom:60px;left:180px;width:360px;transform:rotate(-5deg)">
-    <p class="hand">Thanks for reading!</p>
+  <div class="receipt" style="top:150px;right:180px;width:500px;transform:rotate(3deg)">
+    <p class="r-head">Andrea Martinez Moreno</p>
+    <ul class="r-items">
+      <li><span>Pages viewed</span><span>13</span></li>
+      <li><span>Real clients</span><span>2</span></li>
+      <li><span>Concept brands</span><span>1</span></li>
+      <li><span>Languages</span><span>2</span></li>
+    </ul>
+    <p class="r-total"><span>Next step</span><span>Say hello</span></p>
+    <p class="r-foot" style="margin-top:14px">Thank you for your visit</p>
+    <i class="barcode"></i>
   </div>
 </section>
 
