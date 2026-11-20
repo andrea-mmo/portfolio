@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Online wedding invitation | Andrea Martinez Moreno</title>
+<meta name="description" content="Case study: a mobile-first wedding invitation website with an envelope opening, a step-by-step RSVP form and a private Google Sheet for the replies. Names, photos and bank details are fictional.">
+<meta property="og:title" content="Online wedding invitation | Andrea Martinez Moreno">
+<meta property="og:description" content="Case study: a mobile-first wedding invitation website with an envelope opening, a step-by-step RSVP form and a private Google Sheet for the replies. Names, photos and bank details are fictional.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://andrea-mmo.github.io/portfolio/work/wedding-invitation.html">
+<meta property="og:image" content="https://andrea-mmo.github.io/portfolio/images/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://andrea-mmo.github.io/portfolio/work/wedding-invitation.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4D3F'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23F6F4EF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a class="logo" href="../index.html">Andrea Martinez Moreno</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work" aria-current="true">Work</a>
+      <a href="../index.html#services">What I do</a>
+      <a href="../index.html#about">About</a>
+      <a class="nav-cta" href="../index.html#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="container case-page">
+    <a class="back-link" href="../index.html#work">← All work</a>
+    <p class="eyebrow">Case study · Personal project</p>
+    <div class="case-head">
+      <h1>Online wedding invitation</h1>
+      <p class="case-sub">An invitation that opens like an envelope on the guest's phone, with everything they need to know and a short form to reply, saved in a private spreadsheet for the couple.</p>
+    </div>
+
+    <dl class="meta">
+      <div><dt>Client</dt><dd>A couple getting married in Valencia <span>Made as a gift for friends</span></dd></div>
+      <div><dt>My role</dt><dd>Concept, design and build <span>Design directions, copy, front end and reply system</span></dd></div>
+      <div><dt>Year</dt><dd>2026 <span>Wedding in 2027</span></dd></div>
+      <div><dt>Language</dt><dd>Spanish, Catalan, English <span>Names, venues, photos and bank details here are fictional</span></dd></div>
+    </dl>
+
+    <p class="case-note">The real site belongs to a private event, so the demo below is a copy with made-up couple, venues, phone number and account number, and with landscape photos instead of the couple's.</p>
+
+    <div class="case-links">
+      <a class="btn btn-primary" href="https://andrea-mmo.github.io/wedding-invitation/" target="_blank" rel="noopener">Open the demo ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/andrea-mmo/wedding-invitation" target="_blank" rel="noopener">View code on GitHub ↗</a>
+    </div>
+
+    <ul class="phones phones-wrap" tabindex="0" aria-label="Screens of the wedding invitation">
+      <li>
+        <div class="phone-view"><img src="../images/boda-1-sobre.jpg" alt="Closed green envelope with a gold wax seal and the text Slide to open" width="750" height="1624" loading="lazy"></div>
+        <span>1. The envelope</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/boda-2-portada.jpg" alt="Invitation cover with blue and white hydrangeas, the couple's names and the date" width="750" height="1624" loading="lazy"></div>
+        <span>2. The cover</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/boda-3-donde-cuando.jpg" alt="Where and when section with an arched card for the ceremony, the time, the venue and a directions button" width="750" height="1624" loading="lazy"></div>
+        <span>3. Where and when</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/boda-5-regalos.jpg" alt="Gifts section with an illustrated scroll and a button that reveals the account number" width="750" height="1624" loading="lazy"></div>
+        <span>4. Gifts, tucked away</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/boda-4-galeria.jpg" alt="Photo gallery in framed pictures" width="750" height="1624" loading="lazy"></div>
+        <span>5. Photo gallery</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/boda-6-confirmar.jpg" alt="First step of the reply form, asking for the guest's name, with a Next button" width="750" height="1624" loading="lazy"></div>
+        <span>6. One question at a time</span>
+      </li>
+    </ul>
+
+    <div class="story">
+      <article>
+        <h3>The brief</h3>
+        <p>The couple wanted something more personal than a PDF or a WhatsApp image: a page guests could open from a QR code on the printed invitation, with the day's details, the dress code, the gift information and a way to say whether they are coming.</p>
+        <p>The hard part is the replies. Each guest might bring a partner or children, have allergies, need a bus seat or want to suggest a song, and the couple has to turn all of that into a headcount and a catering list.</p>
+      </article>
+      <article>
+        <h3>The approach</h3>
+        <p>I started from the paper invitation they had chosen, with its watercolour hydrangeas, green envelope and gold seal, and built the website as the same object: you open the envelope first, then read the card.</p>
+        <p>I made seven different design directions, from editorial and minimal to illustrated, so the couple could react to real pages. They chose the envelope. Then I focused on making the reply form something anyone can finish quickly on a phone.</p>
+      </article>
+    </div>
+
+    <h3 class="decisions-title">Key decisions</h3>
+    <ol class="decisions">
+      <li>
+        <h4>The envelope sets the tone</h4>
+        <p>The first screen is a sealed envelope that opens as the guest slides a finger up, and the page's palette, hydrangeas and lettering all come from the printed invitation. It is the one moment of surprise, and it only happens once.</p>
+      </li>
+      <li>
+        <h4>Everything a guest asks, in one place</h4>
+        <p>A countdown, the ceremony and the celebration with directions in one tap, an “add to calendar” file with reminders a week, a day and three hours before, the dress code with the colours to avoid shown as swatches, and the bus pick-up point.</p>
+      </li>
+      <li>
+        <h4>One question per screen</h4>
+        <p>The reply form is a short wizard. It shows only the steps that apply: companions and children appear after a “yes”, allergies are asked per person, and the bus questions show their follow-ups only when needed. The last step summarises the answers before sending.</p>
+      </li>
+      <li>
+        <h4>Three languages and a night mode</h4>
+        <p>A small ES · CA · EN selector switches the whole page, including the form, error messages, calendar reminders and the date on the cover. It remembers the choice and starts in the visitor's browser language. A sun and moon button adds a night mode, with a dark green palette and soft light behind the watercolour flowers so they do not look dull.</p>
+      </li>
+      <li>
+        <h4>Replies the couple can actually use</h4>
+        <p>Answers are saved to a private Google Sheet through a small Apps Script, with separate tabs for replies, people, guests and a summary of totals. It checks each invitation's maximum number of people, flags anything to review, and lets guests change their answer with the same name until the deadline.</p>
+      </li>
+      <li>
+        <h4>Money talk, kept discreet</h4>
+        <p>The gift section is a gentle sentence and a button. The account number stays hidden until the guest taps to reveal it, and can then be copied in one tap. In this demo the number is obviously fake.</p>
+      </li>
+      <li>
+        <h4>Private by design</h4>
+        <p>The page is hidden from search engines, has no analytics and no tracking, and replies are readable only by whoever has access to the sheet. Names, dates, venues and photos live in one settings file, so changing them never means touching the code.</p>
+      </li>
+    </ol>
+
+    <div class="beyond beyond-plain">
+      <div class="quiz-intro">
+        <p class="eyebrow">Behind the scenes</p>
+        <h3 class="decisions-title">Details that make it feel finished</h3>
+      </div>
+      <ul class="quiz-points">
+        <li>
+          <h4>Seven directions, one chosen</h4>
+          <p>Envelope, watercolour, boarding pass, illustrated, classic, editorial and arches. Showing real pages beat asking what style they liked.</p>
+        </li>
+        <li>
+          <h4>Eight gallery styles</h4>
+          <p>Carousel, mosaic, polaroid, arches, frames and more, switched with one setting so the couple could see their own photos in each before deciding.</p>
+        </li>
+        <li>
+          <h4>Light and quick</h4>
+          <p>Plain HTML, CSS and JavaScript with no framework, compressed images, so the page opens fast on a guest's phone. Motion is switched off for visitors who prefer reduced motion.</p>
+        </li>
+        <li>
+          <h4>Printed and online, together</h4>
+          <p>I prepared the QR code for the printed invitation and the files for publishing, so the paper and the page lead to the same place.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tools">
+      <span class="tools-label">Tools</span>
+      <ul>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>Google Sheets</li>
+        <li>Google Apps Script</li>
+        <li>QR code</li>
+        <li>Static hosting</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band case-nav">
+    <div class="container">
+      <p class="eyebrow">Next project</p>
+      <a class="next-project" href="peluqueria-moreno.html">
+        <span class="next-name">Peluquería Moreno →</span>
+        <span class="next-sub">A website, a hair quiz and an Instagram account that turn local searches into bookings for a hair salon in Valencia, Spain, measured from the first month.</span>
+      </a>
+      <div class="actions">
+        <a class="btn btn-ghost" href="../index.html#work">All work</a>
+        <a class="btn btn-ghost" href="../index.html#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Andrea Martinez Moreno</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1287,3 +1287,20 @@ figcaption {
     max-width: none;
   }
 }
+
+/* Short note under a case study's facts (e.g. about anonymised demo data) */
+.case-note {
+  max-width: 62ch;
+  margin: 8px 0 0;
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
+
+/* A longer set of phone screens wraps onto a second row from tablet up */
+@media (min-width: 760px) {
+  .phones-wrap {
+    flex-wrap: wrap;
+    row-gap: 32px;
+  }
+}
