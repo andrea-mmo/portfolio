@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Truce, a skincare routine app | Andrea Martinez Moreno</title>
+<meta name="description" content="Case study: a skincare routine organiser that helps people find out which product does not suit them, with a rule engine instead of AI making the decisions, data kept on the device and an English and Spanish app. Demo uses invented data.">
+<meta property="og:title" content="Truce, a skincare routine app | Andrea Martinez Moreno">
+<meta property="og:description" content="Case study: a skincare routine organiser that helps people find out which product does not suit them, with a rule engine instead of AI making the decisions, data kept on the device and an English and Spanish app. Demo uses invented data.">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://andrea-mmo.github.io/portfolio/work/truce.html">
+<meta property="og:image" content="https://andrea-mmo.github.io/portfolio/images/share-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://andrea-mmo.github.io/portfolio/work/truce.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231F4D3F'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='38' fill='%23F6F4EF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="container topbar">
+    <a class="logo" href="../index.html">Andrea Martinez Moreno</a>
+    <nav class="nav" aria-label="Main">
+      <a href="../index.html#work" aria-current="true">Work</a>
+      <a href="../index.html#services">What I do</a>
+      <a href="../index.html#about">About</a>
+      <a class="nav-cta" href="../index.html#contact">Get in touch</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="container case-page">
+    <a class="back-link" href="../index.html#work">← All work</a>
+    <p class="eyebrow">Case study · Personal project</p>
+    <div class="case-head">
+      <h1>Truce</h1>
+      <p class="case-sub">A skincare routine organiser for people whose skin keeps breaking out. It builds the routine from the products they already own and helps them find out which one is the problem, one product at a time.</p>
+    </div>
+
+    <dl class="meta">
+      <div><dt>Client</dt><dd>Personal project <span>A product idea, designed and built end to end</span></dd></div>
+      <div><dt>My role</dt><dd>Concept, product design and build <span>Method, rules, copy, interface and app</span></dd></div>
+      <div><dt>Year</dt><dd>2026 <span>Working app, demo online</span></dd></div>
+      <div><dt>Language</dt><dd>English and Spanish <span>Every text exists in both</span></dd></div>
+    </dl>
+
+    <p class="case-note">Truce is not a medical tool: it does not diagnose or promise results. The demo uses an invented person, Ada, with invented brands and products, so no real health data is ever published.</p>
+
+    <div class="case-links">
+      <a class="btn btn-primary" href="https://truce-demo.pages.dev" target="_blank" rel="noopener">Open the demo ↗</a>
+      <a class="btn btn-ghost" href="https://github.com/andrea-mmo/truce" target="_blank" rel="noopener">View code on GitHub ↗</a>
+    </div>
+
+    <ul class="phones" tabindex="0" aria-label="Screens of the Truce app">
+      <li>
+        <div class="phone-view"><img src="../images/truce-1-today.jpg" alt="Today screen with a professional-advice alert above the morning routine" width="750" height="1624" loading="lazy"></div>
+        <span>1. Today, with the safety alert first</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/truce-2-evening.jpg" alt="Evening routine with five steps, an LED mask step and tonight's azelaic acid treatment" width="750" height="1624" loading="lazy"></div>
+        <span>2. Tonight's routine</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/truce-3-analysis.jpg" alt="Analysis of the products: sunscreen missing, too much exfoliation per week, repeated acids" width="750" height="1624" loading="lazy"></div>
+        <span>3. What the routine is doing</span>
+      </li>
+      <li>
+        <div class="phone-view"><img src="../images/truce-4-reset.jpg" alt="Reset proposal listing the products to pause, and the order to bring them back one by one" width="750" height="1624" loading="lazy"></div>
+        <span>4. Reset and reintroduction</span>
+      </li>
+    </ul>
+
+    <div class="story">
+      <article>
+        <h3>The problem</h3>
+        <p>Many people with breakouts keep adding products: a salicylic cleanser, an acid toner, retinol, two vitamin C serums. When the skin gets worse, there is no way to tell which product is to blame, because everything changed at once.</p>
+        <p>Most skincare apps answer by recommending more products. I wanted the opposite: an app that takes things away, and tells you when it is time to see a professional.</p>
+      </article>
+      <article>
+        <h3>The approach</h3>
+        <p>I built the app around the method a dermatologist would suggest. First a <b>reset</b>: six weeks with a simple base routine so the skin calms down. Then <b>reintroduction</b>, one product every two weeks from the lowest to the highest risk, with weekly check-ins to decide whether each product stays.</p>
+        <p>Everything else, the daily routine, the ingredient reading and the advice, exists to make that method easy to follow on a phone.</p>
+      </article>
+    </div>
+
+    <h3 class="decisions-title">Key decisions</h3>
+    <ol class="decisions">
+      <li>
+        <h4>A rule engine decides, not AI</h4>
+        <p>The same products always give the same result. The engine is plain code with no screen attached, it returns a rule id and the data, and the words come from translation files. AI is used for one thing only: reading a label from a photo, and the person confirms every ingredient line by line.</p>
+      </li>
+      <li>
+        <h4>Every rule has a source</h4>
+        <p>179 ingredients are checked against the European Commission's CosIng database, each one stored with its source. The rules are written down in plain language, with an evidence level, and marked as pending professional review. The app says so too.</p>
+      </li>
+      <li>
+        <h4>Safety comes before the routine</h4>
+        <p>A short check (deep painful bumps, marks that stay, pregnancy, prescription medication, signs of infection) shows a “worth having a professional look at it” alert above everything else. It cannot be dismissed by a good routine.</p>
+      </li>
+      <li>
+        <h4>Language is part of the spec</h4>
+        <p>“An ingredient to watch”, never “comedogenic, avoid it”. “Worth having a professional look at it”, never a diagnosis. Safety texts are fixed templates, never generated, and the same rules apply in English and Spanish.</p>
+      </li>
+      <li>
+        <h4>The routine comes from real products</h4>
+        <p>The person adds what they own. Truce builds the morning and evening routine from it, spaces night treatments safely across the week (azelaic acid, salicylic acid, retinol), and flags the classic mistakes: acids without sunscreen, too much exfoliation, the same active in three products, benzoyl peroxide with retinol.</p>
+      </li>
+      <li>
+        <h4>Adding a product without typing a label</h4>
+        <p>Ingredient lists can be pasted, scanned on the device with OCR, found by barcode in the open Open Beauty Facts database, or read from a photo. Whatever the route, the person confirms the list before it is used.</p>
+      </li>
+      <li>
+        <h4>Health data stays on the device</h4>
+        <p>Photos of the skin, the diary and the check-ins never leave the phone by default. Optional sync between devices is end-to-end encrypted: the key comes from a passphrase that never leaves the device, and the server only ever stores scrambled text.</p>
+      </li>
+      <li>
+        <h4>Rewarding consistency, not buying</h4>
+        <p>A gentle points system rewards finishing the routine and doing the weekly check-in. Nothing is awarded for owning more products, which would work against the whole idea.</p>
+      </li>
+    </ol>
+
+    <div class="beyond beyond-plain">
+      <div class="quiz-intro">
+        <p class="eyebrow">Behind the scenes</p>
+        <h3 class="decisions-title">Details that make it trustworthy</h3>
+      </div>
+      <ul class="quiz-points">
+        <li>
+          <h4>An invented case that doubles as a test</h4>
+          <p>Ada uses 16 products and no sunscreen. The document describing what the engine must say about her is also an automated test, so a change that alters the advice is caught straight away.</p>
+        </li>
+        <li>
+          <h4>300+ tests</h4>
+          <p>The engine, the data, the sync and the translations are all tested. One test checks that English and Spanish have exactly the same texts and nothing is left untranslated.</p>
+        </li>
+        <li>
+          <h4>Works offline, installs like an app</h4>
+          <p>It is a web app that can be added to the phone's home screen and keeps working without a connection, with backup and restore of everything as a file.</p>
+        </li>
+        <li>
+          <h4>Keys that never reach the browser</h4>
+          <p>The label-reading AI sits behind a server function, so the API key is never exposed, and the private version is open only to its owner.</p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="tools">
+      <span class="tools-label">Tools</span>
+      <ul>
+        <li>React</li>
+        <li>TypeScript</li>
+        <li>Vite</li>
+        <li>Progressive web app</li>
+        <li>IndexedDB</li>
+        <li>Vitest</li>
+        <li>Tesseract OCR</li>
+        <li>Open Beauty Facts</li>
+        <li>Cloudflare Pages</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band case-nav">
+    <div class="container">
+      <p class="eyebrow">Next project</p>
+      <a class="next-project" href="peluqueria-moreno.html">
+        <span class="next-name">Peluquería Moreno →</span>
+        <span class="next-sub">A website, a hair quiz and an Instagram account that turn local searches into bookings for a hair salon in Valencia, Spain, measured from the first month.</span>
+      </a>
+      <div class="actions">
+        <a class="btn btn-ghost" href="../index.html#work">All work</a>
+        <a class="btn btn-ghost" href="../index.html#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container footer-inner">
+    <span>© 2026 Andrea Martinez Moreno</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+</body>
+</html>
