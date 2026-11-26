@@ -1633,3 +1633,97 @@ main {
   font-weight: 600;
   color: var(--accent);
 }
+
+/* A whole page shown uncropped inside a small browser window, with room around it */
+.product-shot:has(.shot-browser) {
+  display: grid;
+  place-items: center;
+  padding: 9% 7% 7%;
+}
+
+.shot-browser {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 24px 40px -24px rgba(36, 16, 21, 0.45);
+  transition: transform 0.5s ease;
+}
+
+.shot-bar {
+  display: flex;
+  gap: 5px;
+  padding: 7px 10px;
+  background: var(--ink);
+}
+
+.shot-bar i {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #6A5157;
+}
+
+.shot-browser img,
+.product:hover .shot-browser img {
+  position: static;
+  width: 100%;
+  height: auto;
+  transform: none;
+}
+
+.product:hover .shot-browser {
+  transform: translateY(-4px);
+}
+
+/* Phones: a little more room above the browser frame so the labels sit clear of it */
+@media (max-width: 559px) {
+  .product-shot:has(.shot-browser) {
+    aspect-ratio: auto;
+    padding: 44px 6% 20px;
+  }
+}
+
+/* App screens shown as two phones on the project's own colour */
+.shot-phones {
+  background: var(--shot-bg, var(--surface));
+}
+
+.shot-phone {
+  position: absolute;
+  width: 47%;
+  padding: 4px;
+  background: #1C1C1B;
+  border-radius: 20px;
+  box-shadow: 0 22px 36px -18px rgba(0, 0, 0, 0.5);
+  transition: transform 0.5s ease;
+}
+
+.shot-phone img,
+.product:hover .shot-phone img {
+  position: static;
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  transform: none;
+}
+
+.shot-phone-back {
+  right: 9%;
+  top: 9%;
+  transform: rotate(6deg);
+}
+
+.shot-phone-front {
+  left: 11%;
+  top: 15%;
+  transform: rotate(-4deg);
+}
+
+.product:hover .shot-phone-front {
+  transform: rotate(-2deg) translateY(-6px);
+}
+
+.product:hover .shot-phone-back {
+  transform: rotate(8deg) translateX(4px);
+}
