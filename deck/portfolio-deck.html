@@ -6,7 +6,7 @@
 <title>Andrea Martinez Moreno | Marketing Portfolio</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Mono:wght@400;500&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root {
   --sage: #C8D5CB;
@@ -713,6 +713,43 @@ body {
 .timeline li { padding: 12px 0; }
 .timeline h3 { font-size: 46px; }
 .timeline p { margin-top: 8px; }
+
+/* ===== Wine shop-window style, matching the website =====
+   Same receipts, tags and order bar; new colours and type. */
+:root {
+  --sage: #F2C6CC;      /* blush slides */
+  --green: #8A1F38;     /* wine */
+  --green-dark: #66162A;
+  --cream: #FFFFFF;     /* white floor */
+  --paper: #FBF6F6;
+  --ink: #241015;
+  --tape: #F2C6CC;      /* blush tape and highlights */
+  --blush: #F8E3E6;
+  --mint: #F8EFEE;
+}
+
+body { font-family: "IBM Plex Mono", ui-monospace, monospace; }
+
+.display, .paren, .contents li span:first-child, .timeline h3, .concept h3,
+.contact-block .big, .cover-who .name {
+  font-family: "Archivo", "Arial Narrow", sans-serif;
+  font-stretch: 62%;
+  font-weight: 900;
+}
+
+.display { text-transform: uppercase; letter-spacing: 0; line-height: .9; }
+.display em { font-style: normal; color: var(--green); }
+.bg-green .display em { color: var(--tape); }
+
+.timeline h3, .concept h3, .contact-block .big, .cover-who .name { font-weight: 800; }
+.bar i.hi { background: var(--ink); }
+.receipt, .photo.polaroid { background: #FFFFFF; }
+.slide.bg-cream .receipt { box-shadow: inset 0 0 0 2px rgba(36, 16, 21, .12); }
+
+/* Condensed capitals run wider than the old serif: a few titles step down */
+.cover-headline { font-size: 172px; }
+.service h2.display { font-size: 62px !important; line-height: .92; }
+.contact-title2 { font-size: 190px; }
 </style>
 </head>
 <body>
@@ -956,7 +993,7 @@ body {
 <section class="slide bg-cream">
   <div class="topbar"><span>Andrea Martinez Moreno</span><span>Peluquería Moreno</span><span class="order">Nº 07 / 17 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:150px">Instagram<br><em>from zero</em></h2>
+  <h2 class="display cs-title" style="font-size:128px">Instagram<br><em>from zero</em></h2>
   <div class="tape tape-green" style="top:70px;left:150px;transform:rotate(-3deg)">Social media · Oct 2026</div>
 
   <div class="mono" style="position:absolute;top:470px;left:150px;width:800px">
@@ -1189,7 +1226,7 @@ body {
 <section class="slide bg-cream">
   <div class="topbar"><span>Andrea Martinez Moreno</span><span>Multiservicios Ben Fet</span><span class="order">Nº 14 / 17 <i class="barcode"></i></span></div>
 
-  <h2 class="display cs-title" style="font-size:124px">Multiservicios<br><em>Ben Fet</em></h2>
+  <h2 class="display cs-title" style="font-size:90px">Multiservicios<br><em>Ben Fet</em></h2>
   <div class="tape tape-blush" style="top:70px;left:150px;transform:rotate(-3deg)">Real client · In progress</div>
   <div class="mono cs-sub" style="left:1100px;top:120px;width:670px">
     Six directions for a cleaning company's website. Each one is a different positioning, so the owner can choose without jargon.
@@ -1287,7 +1324,7 @@ body {
   <div class="receipt" style="top:150px;right:180px;width:500px;transform:rotate(3deg)">
     <p class="r-head">Andrea Martinez Moreno</p>
     <ul class="r-items">
-      <li><span>Pages viewed</span><span>15</span></li>
+      <li><span>Pages viewed</span><span>17</span></li>
       <li><span>Real clients</span><span>2</span></li>
       <li><span>Concept brands</span><span>1</span></li>
       <li><span>Languages</span><span>2</span></li>
