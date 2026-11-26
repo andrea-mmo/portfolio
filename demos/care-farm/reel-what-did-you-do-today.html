@@ -1,0 +1,97 @@
+<!doctype html>
+<html><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reel · What did you do today? (anonymised demo)</title>
+<!-- Anonymised version of a creative task. Stock photos from Unsplash: Sarah Halliday, C Cai, Carson van Tol, Kerry Nicholson. -->
+<link href="assets/fonts.css" rel="stylesheet">
+<style>
+  :root{--forest:#1f4030;--cream:#f5efe2;--terra:#d9683f;--peach:#f4b183;--sage:#a9c08c;--sky:#8cc0d6;--berry:#c4537a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1080px;height:1920px;overflow:hidden;font-family:Poppins,sans-serif;background:var(--cream)}
+  .stage{position:relative;width:1080px;height:1920px;overflow:hidden}
+  .head{position:absolute;left:80px;top:150px;right:80px}
+  .kicker{font-weight:800;font-size:30px;letter-spacing:.14em;color:var(--terra)}
+  h1{margin-top:16px;color:var(--forest);font-weight:800;font-size:118px;line-height:1;letter-spacing:-.03em}
+  h1 .line{display:block;overflow:hidden;padding-bottom:6px}
+  h1 .line>span{display:inline-block}
+  .u{position:relative;display:inline-block}
+  .ubar{position:absolute;left:-4px;bottom:4px;height:28px;background:var(--peach);z-index:-1;border-radius:8px;transform:rotate(-1.5deg);transform-origin:left}
+  .card{position:absolute;left:110px;top:560px;width:860px;height:1000px;border-radius:44px;overflow:hidden;background-size:cover;background-repeat:no-repeat;box-shadow:0 30px 60px rgba(20,40,30,.22);will-change:transform}
+  .label{position:absolute;left:40px;bottom:40px;font-family:Fredoka,sans-serif;font-weight:600;font-size:64px;color:var(--forest);padding:16px 36px 20px;border-radius:26px;box-shadow:0 10px 26px rgba(20,40,30,.28);transform-origin:left center;white-space:nowrap}
+  .n{position:absolute;top:34px;left:34px;width:92px;height:92px;border-radius:50%;background:#fff;color:var(--forest);font-weight:800;font-size:40px;display:grid;place-items:center}
+  .cta{position:absolute;left:0;right:0;bottom:0;height:380px;background:var(--forest);padding:56px 80px;color:#fff}
+  .cta h2{font-weight:800;font-size:64px;line-height:1.05;letter-spacing:-.02em}
+  .cta h2 span{color:var(--peach)}
+  .row{margin-top:36px;display:flex;align-items:center;justify-content:space-between}
+  .btn{background:var(--peach);color:var(--forest);font-weight:800;font-size:36px;padding:22px 40px;border-radius:60px}
+  .url{font-weight:600;font-size:32px;letter-spacing:.04em;color:#d8e4d6}
+  .logo{position:absolute;right:80px;top:150px;font-family:Fredoka,sans-serif;font-weight:600;font-size:30px;color:var(--forest);border:3px dashed rgba(31,64,48,.45);border-radius:18px;padding:12px 26px}
+  .stripe{position:absolute;left:0;right:0;top:0;height:14px;display:flex}.stripe div{flex:1}
+  html.fit,html.fit body{width:100%;height:100%;overflow:hidden;background:var(--cream)}
+  html.fit .stage{transform-origin:0 0;position:absolute}
+</style></head>
+<body><div class="stage" id="stage">
+  <div class="stripe"><div style="background:var(--terra)"></div><div style="background:var(--peach)"></div><div style="background:var(--sage)"></div><div style="background:var(--sky)"></div><div style="background:var(--berry)"></div></div>
+  <span class="logo" id="logo">Farm logo</span>
+  <div class="head">
+    <div class="kicker" id="kicker">A DAY ON THE FARM</div>
+    <h1><span class="line"><span id="l1">“What did you</span></span><span class="line"><span id="l2">do <span class="u">today?”<i class="ubar" id="ubar"></i></span></span></span></h1>
+  </div>
+  <div class="card" style="background-image:url(assets/hen.jpg);background-position:50% 50%"><div class="n">1</div><div class="label" style="background:var(--peach)">Held a hen</div></div>
+  <div class="card" style="background-image:url(assets/pancake.jpg);background-position:50% 55%"><div class="n">2</div><div class="label" style="background:var(--terra);color:#fff;bottom:auto;top:150px">Flipped a pancake</div></div>
+  <div class="card" style="background-image:url(assets/birdhouse.jpg);background-position:50% 35%"><div class="n">3</div><div class="label" style="background:var(--sage)">Built a bird box</div></div>
+  <div class="card" style="background-image:url(assets/willow.jpg);background-position:50% 60%"><div class="n">4</div><div class="label" style="background:#fff">Wove a willow basket</div></div>
+  <div class="cta" id="cta">
+    <h2>Come and see<br>for <span>yourself.</span></h2>
+    <div class="row"><div class="btn">Arrange a visit →</div><div class="url">Link in bio</div></div>
+  </div>
+</div>
+<script>
+const DURATION=12;
+const clamp=(x)=>Math.max(0,Math.min(1,x));
+const p=(t,a,b)=>clamp((t-a)/(b-a));
+const easeOut=(x)=>1-Math.pow(1-x,3);
+const easeInOut=(x)=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=(x)=>{const c1=1.9,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+const lerp=(a,b,x)=>a+(b-a)*x;
+const $=(id)=>document.getElementById(id);
+const cards=[...document.querySelectorAll('.card')];
+const rots=[-3,2.5,-2,3];
+// grid targets (card centre offsets from stacked centre 540,1060), scale .5
+const grid=[[-232,-310],[232,-310],[-232,200],[232,200]];
+const gridRot=[-1.5,1.2,1.4,-1.2];
+
+function render(t){
+  const k=easeOut(p(t,.1,.6));
+  $('kicker').style.cssText=`opacity:${k};transform:translateY(${(1-k)*20}px)`;
+  $('l1').style.transform=`translateY(${(1-easeOut(p(t,.2,.85)))*130}%)`;
+  $('l2').style.transform=`translateY(${(1-easeOut(p(t,.4,1.05)))*130}%)`;
+  const ub=$('ubar'); ub.style.width=`calc(${easeOut(p(t,1.0,1.4))*100}% + 12px)`; ub.style.opacity=p(t,1.0,1.05);
+  $('logo').style.opacity=easeOut(p(t,.6,1.1));
+  const g=easeInOut(p(t,7.6,8.6));
+  cards.forEach((c,i)=>{
+    const t0=1.4+i*1.5;
+    const e=easeOut(p(t,t0,t0+.6));
+    let y=(1-e)*1400, r=lerp(10,rots[i],e), s=1, x=0;
+    // gentle push-back of cards underneath
+    const later=cards.length-1-i;
+    // grid transition
+    x=lerp(x,grid[i][0],g); y=lerp(y,grid[i][1],g); r=lerp(r,gridRot[i],g); s=lerp(1,.5,g);
+    c.style.transform=`translate(${x}px,${y}px) rotate(${r}deg) scale(${s})`;
+    c.style.opacity=t<t0?0:1;
+    const l=c.querySelector('.label'), lp=p(t,t0+.45,t0+.85);
+    l.style.transform=`rotate(${i%2?2:-3}deg) scale(${lp?back(lp):0})`;
+    c.querySelector('.n').style.transform=`scale(${back(p(t,t0+.35,t0+.7))||0})`;
+  });
+  const ce=easeOut(p(t,8.6,9.3));
+  $('cta').style.transform=`translateY(${(1-ce)*100}%)`;
+}
+const q=new URLSearchParams(location.search);
+if(q.has('fit')){document.documentElement.classList.add('fit');const st=document.getElementById('stage');const fit=()=>{const s=Math.min(innerWidth/1080,innerHeight/1920);st.style.transform=`scale(${s})`;st.style.left=((innerWidth-1080*s)/2)+'px';st.style.top=((innerHeight-1920*s)/2)+'px'};fit();addEventListener('resize',fit);}
+if(q.has('t')){render(parseFloat(q.get('t')));document.title='ready';}
+else{
+  document.fonts.ready.then(()=>{const st=performance.now();
+    (function loop(){const t=((performance.now()-st)/1000)%(DURATION+1);render(t);requestAnimationFrame(loop)})();});
+}
+</script>
+</body></html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en-GB"><head><meta charset="utf-8">
+<title>Post 01 · Meet the residents (anonymised demo)</title>
+<link href="assets/fonts.css" rel="stylesheet">
+<!-- Anonymised version of a creative task. Fictional animal names, stock photo (Angela Newman, Unsplash), no client name or logo. -->
+<style>
+  :root{--forest:#1f4030;--cream:#f5efe2;--terra:#d9683f;--peach:#f4b183;--sage:#a9c08c;--sky:#8cc0d6;--berry:#c4537a}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{width:1080px;height:1350px;overflow:hidden;font-family:Poppins,sans-serif;background:var(--forest)}
+  .post{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--forest)}
+  .photo{position:absolute;left:0;right:0;top:0;height:600px;background:url(assets/goat.jpg) 50% 30%/cover no-repeat}
+  .content{position:absolute;left:64px;right:64px;top:640px}
+  .row{display:flex;justify-content:space-between;align-items:center}
+  .tag{background:var(--peach);color:var(--forest);font-weight:800;font-size:22px;letter-spacing:.14em;padding:11px 22px;border-radius:40px}
+  .count{font-family:Fredoka,sans-serif;font-weight:600;color:#fff;font-size:26px}
+  .count b{color:var(--peach);font-weight:600}
+  h1{margin-top:26px;color:var(--cream);font-weight:800;font-size:84px;line-height:1;letter-spacing:-.03em}
+  h1 span{color:var(--sage)}
+  .names{margin-top:30px;display:flex;flex-wrap:wrap;gap:11px}
+  .names i{font-style:normal;font-family:Fredoka,sans-serif;font-weight:500;font-size:25px;color:#fff;padding:6px 18px 7px;border-radius:30px;border:2px solid rgba(255,255,255,.35)}
+  .names i.g{border-color:var(--terra);color:var(--peach)}
+  .names i.h{border-color:var(--peach)} .names i.r{border-color:var(--sage)}
+  .names i.p{border-color:var(--sky)} .names i.d{border-color:var(--berry)}
+  .foot{position:absolute;left:0;right:0;bottom:0;height:110px;background:var(--cream);display:flex;align-items:center;justify-content:space-between;padding:0 64px}
+  .mark{font-family:Fredoka,sans-serif;font-weight:600;font-size:22px;color:var(--forest);border:2px dashed rgba(31,64,48,.45);border-radius:14px;padding:10px 22px}
+  .foot p{color:var(--forest);font-weight:600;font-size:22px;letter-spacing:.06em}
+  .foot p span{color:var(--terra)}
+  .stripe{position:absolute;left:0;right:0;bottom:110px;height:10px;display:flex}
+  .stripe div{flex:1}
+</style></head>
+<body><div class="post">
+  <div class="photo" role="img" aria-label="A white and brown goat looking at the camera with its mouth open, as if laughing"></div>
+  <div class="content">
+    <div class="row"><div class="tag">MEET THE RESIDENTS</div><div class="count">01 / <b>14</b></div></div>
+    <h1>14 animals.<br><span>Every one known</span><br>by name.</h1>
+    <div class="names">
+      <i class="g">Bramble</i><i class="g">Nutmeg</i><i class="g">Pickle</i>
+      <i class="h">Hazel</i><i class="h">Biscuit</i><i class="h">Clover</i>
+      <i class="r">Pip</i><i class="r">Toffee</i><i class="r">Basil</i>
+      <i class="p">Juniper</i><i class="p">Fern</i>
+      <i class="d">Dot</i><i class="d">Moss</i><i class="d">Puddle</i>
+    </div>
+  </div>
+  <div class="stripe"><div style="background:var(--terra)"></div><div style="background:var(--peach)"></div><div style="background:var(--sage)"></div><div style="background:var(--sky)"></div><div style="background:var(--berry)"></div></div>
+  <div class="foot"><span class="mark">Farm logo</span><p>Real animals. <span>Real skills.</span></p></div>
+</div></body></html>
