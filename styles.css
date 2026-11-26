@@ -1,15 +1,16 @@
-/* Shop-window look: white floor, black type, one sale red.
+/* Shop-window look: white floor, wine-black type, wine and blush accents.
    Condensed Archivo for display, regular Archivo for text,
    IBM Plex Mono for labels, tags and small print. */
 :root {
   --bg: #FFFFFF;
-  --surface: #F4F4F1;
-  --band: #F4F4F1;
-  --ink: #0E0E0E;
-  --ink-soft: #55554F;
-  --line: #E2E2DD;
-  --accent: #D21F27;
-  --accent-dark: #A8141B;
+  --surface: #F8EFEE;
+  --band: #F8EFEE;
+  --ink: #241015;
+  --ink-soft: #6A5157;
+  --line: #EBDCDA;
+  --accent: #8A1F38;
+  --accent-dark: #66162A;
+  --blush: #F2C6CC;
   --f-text: "Archivo", "Helvetica Neue", Arial, sans-serif;
   --f-mono: "IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
@@ -125,8 +126,8 @@ img {
 
 /* Announcement bar above the header */
 .promo-bar {
-  background: var(--ink);
-  color: #FFFFFF;
+  background: var(--blush);
+  color: #4A1220;
   text-align: center;
   font-family: var(--f-mono);
   font-size: 11px;
@@ -224,12 +225,12 @@ img {
 }
 
 .btn-primary {
-  background: var(--ink);
+  background: var(--accent);
   color: #FFFFFF;
 }
 
 .btn-primary:hover {
-  background: var(--accent);
+  background: var(--ink);
   color: #FFFFFF;
 }
 
@@ -250,39 +251,6 @@ img {
   margin-top: 30px;
 }
 
-/* Hang tag: a label with a punched hole, used on the hero image */
-.hang-tag {
-  position: absolute;
-  left: 20px;
-  bottom: 20px;
-  padding: 9px 14px 9px 24px;
-  background: #FFFFFF;
-  color: var(--ink);
-  font-family: var(--f-mono);
-  font-size: 11px;
-  font-weight: 600;
-  line-height: 1.3;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  clip-path: polygon(11px 0, 100% 0, 100% 100%, 11px 100%, 0 50%);
-}
-
-.hang-tag::before {
-  content: "";
-  position: absolute;
-  left: 10px;
-  top: 50%;
-  width: 5px;
-  height: 5px;
-  margin-top: -2.5px;
-  border-radius: 50%;
-  background: var(--surface);
-}
-
-.hang-tag b {
-  color: var(--accent);
-}
-
 /* Home hero: headline on the left, a featured project like a shop window on the right */
 .hero {
   display: grid;
@@ -301,31 +269,94 @@ img {
   margin-top: 24px;
 }
 
+/* Featured project: the salon's customer journey as three phones on wine */
 .hero-window {
-  position: relative;
-  min-height: 320px;
-  background: #292522;
-  overflow: hidden;
+  display: grid;
+  align-content: center;
+  gap: 20px;
+  padding: 32px 20px 36px;
+  background: #5A1426;
+  color: #FFFFFF;
+  text-decoration: none;
 }
 
-.hero-window img {
-  position: absolute;
-  inset: 0;
+.hero-window:hover {
+  color: #FFFFFF;
+}
+
+/* Keep the phones a sensible size on very wide screens */
+.funnel-head, .funnel {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 50%;
-  transition: transform 0.6s ease;
+  max-width: 620px;
+  justify-self: center;
 }
 
-.hero-window:hover img {
-  transform: scale(1.03);
+.funnel-head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 16px;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
 
-.hero-window a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+.funnel-head b {
+  margin-right: 8px;
+  color: var(--blush);
+  font-weight: 600;
+}
+
+.funnel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 2vw, 22px);
+}
+
+.funnel li {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  text-align: center;
+}
+
+.funnel-phone {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #3F0C19;
+  border-radius: 22px;
+  transition: transform 0.4s ease;
+}
+
+.funnel-phone img {
+  border-radius: 17px;
+}
+
+.hero-window:hover .funnel li:nth-child(1) .funnel-phone { transform: translateY(-6px); }
+.hero-window:hover .funnel li:nth-child(2) .funnel-phone { transform: translateY(-6px); transition-delay: 0.06s; }
+.hero-window:hover .funnel li:nth-child(3) .funnel-phone { transform: translateY(-6px); transition-delay: 0.12s; }
+
+.funnel-step {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.funnel-step b {
+  margin-right: 6px;
+  color: var(--blush);
+}
+
+.funnel-what {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  color: #E2AAB3;
 }
 
 /* Shop bar: breadcrumb, filters and count above the work grid */
@@ -381,8 +412,8 @@ img {
 }
 
 .filters button[aria-pressed="true"] {
-  background: var(--ink);
-  border-color: var(--ink);
+  background: var(--accent);
+  border-color: var(--accent);
   color: #FFFFFF;
 }
 
@@ -1320,8 +1351,6 @@ figcaption {
 
   .hero-window {
     margin: 0 -20px;
-    aspect-ratio: 4 / 3;
-    min-height: 0;
   }
 }
 
@@ -1487,8 +1516,8 @@ figcaption {
   }
 
   .hero-window {
-    min-height: 560px;
     margin-left: 0;
+    padding: 40px clamp(28px, 4vw, 56px);
   }
 }
 
@@ -1531,7 +1560,7 @@ figcaption {
     scroll-behavior: auto;
   }
 
-  .concepts img, .product-shot img, .hero-window img {
+  .concepts img, .product-shot img, .funnel-phone {
     transition: none;
   }
 }
@@ -1560,4 +1589,47 @@ main {
   text-transform: none;
   letter-spacing: 0.02em;
   font-size: 15px;
+}
+
+/* English captions under Spanish screenshots */
+.phones small {
+  display: block;
+  margin-top: 4px;
+  font-size: 13px;
+  line-height: 1.45;
+  color: var(--ink-soft);
+}
+
+.phones small span {
+  display: block;
+  margin: 0;
+  font-size: inherit;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.ig-key {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px 4px;
+  max-width: 560px;
+  margin-top: 10px;
+  counter-reset: post;
+}
+
+.ig-key li {
+  counter-increment: post;
+  font-size: 12.5px;
+  line-height: 1.4;
+  color: var(--ink-soft);
+  padding-right: 8px;
+}
+
+.ig-key li::before {
+  content: counter(post);
+  display: block;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--accent);
 }
