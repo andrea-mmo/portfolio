@@ -1727,3 +1727,13 @@ main {
 .product:hover .shot-phone-back {
   transform: rotate(8deg) translateX(4px);
 }
+
+/* Ben Fet: mark the direction the client chose */
+.concept-chosen {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 2px 8px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+}
